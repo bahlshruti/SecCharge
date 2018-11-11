@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+
+        <include layout="@layout/header_name_upper"/>
+ 
+        <ListView
+            android:id="@+id/listViewShowEv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/seccharge"
+            android:divider="@color/white"
+            android:dividerHeight="1dp" />
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btnAddVehicle"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorButton"
+        android:padding="5dp"
+        android:text="@string/action_addVehicle"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/seccharge"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:padding="20dp">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:text="Add Vehicle"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/txtcaryear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView"
+                android:text="Car Year"
+                android:textColor="@color/white" />
+
+
+            <Spinner
+                android:id="@+id/spCarYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtcaryear"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:entries="@array/car_year"
+                android:hint="Car Year"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/text_white_text_icons_100"
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:id="@+id/txtcarmake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spCarYear"
+                android:layout_marginRight="220dp"
+                android:layout_marginTop="15dp"
+                android:text="Car Make"
+                android:textColor="@color/white"
+                />
+
+
+            <Spinner
+                android:id="@+id/spCarMake"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtcarmake"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:entries="@array/make_array"
+                android:paddingLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/text_white_text_icons_100"
+                android:textColorHint="#BDBDBD"
+                android:layout_toLeftOf="@+id/spCarModel"
+                android:layout_toStartOf="@+id/spCarModel" />
+
+            <TextView
+                android:id="@+id/txtcarmodel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spCarMake"
+                android:layout_marginBottom="200dp"
+                android:layout_marginTop="15dp"
+                android:text=""
+
+                android:textColor="@color/white" />
+
+
+            <Spinner
+                android:id="@+id/spCarModel"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txtcarmodel"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:hint="Car Make"
+                android:paddingLeft="20dp"
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:id="@+id/txtvechile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spCarModel"
+                android:layout_marginRight="150dp"
+                android:layout_marginTop="15dp"
+                android:text="Vechile Identification Number"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/etVIN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtvechile"
+                android:layout_below="@id/txtvechile"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:hint="Vehicle Identification Number"
+                android:inputType="textEmailAddress"
+                android:maxLength="17"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:id="@+id/txtpleteno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etVIN"
+                android:layout_marginTop="15dp"
+                android:text="Plate Number"
+                android:textColor="@color/white" />
+
+
+            <EditText
+                android:id="@+id/etPlateNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtpleteno"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_border"
+                android:hint="Plate Number"
+                android:maxLength="7"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD"
+                android:textSize="20sp" />
+
+
+            <Button
+                android:id="@+id/btnRegisterEV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etPlateNumber"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+
+                android:background="@drawable/green_button_selector"
+                android:alpha="0.85"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/action_addV"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@drawable/greenbutton_text_selector"
+                android:textSize="22sp"
+                android:layout_marginTop="20sp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/spCarModel"
+                android:layout_alignLeft="@+id/spCarModel"
+                android:layout_alignStart="@+id/spCarModel"
+                android:text="Car Model"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>

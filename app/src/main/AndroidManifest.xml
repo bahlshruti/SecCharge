@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aidor.projects.seccharge">
+
+    <permission
+        android:name="com.aidor.projects.seccharge.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+    <uses-permission android:name="com.aidor.projects.seccharge.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Added by Nikhil. Permission for recording audio for speech recognition -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="com.aidor.secchargemobile.custom.SecCharge"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/SecCharge">
+
+        <!-- android:theme="@style/AppTheme" -->
+
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.ForgetPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.AfterForgetPassActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.BeforeLoginMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.DetailInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.TripPlanerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge"
+            android:windowSoftInputMode="stateHidden" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDa0GpmFUZ0z9IPJ5CTns1H7JrJqzV28wU" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.ReserveMainActivity"
+            android:label="Reserve Station"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SecCharge" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.AccountActivity"
+            android:label="@string/title_activity_account"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.HomeActivity"
+            android:theme="@style/SecCharge">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.MyProfileActivity"
+            android:label="@string/title_activity_my_profile"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.AccountActivity"
+            android:theme="@style/SecCharge"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.AccountActivity" />
+        </activity>
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.MyEvActivity"
+            android:label="@string/title_activity_my_ev"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.AccountActivity"
+            android:theme="@style/SecCharge">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.AccountActivity" />
+        </activity>
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.AddVehicleActivity"
+            android:label="@string/title_activity_add_vehicle"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.AccountActivity"
+            android:theme="@style/SecCharge"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.AccountActivity" />
+        </activity>
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.SocActivity"
+            android:label="@string/title_activity_soc"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.AccountActivity"
+            android:theme="@style/SecCharge">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.AccountActivity" />
+        </activity>
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.ReserveSummaryActivity"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.ReserveMainActivity"
+            android:theme="@style/SecCharge" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.PaymentInfoActivity"
+            android:label="@string/title_activity_payment_info"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.ReserveSummaryActivity"
+            android:theme="@style/SecCharge"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.ReserveSummaryActivity" />
+        </activity>
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.MyReservationsActivity"
+            android:label="My Reservations"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.HomeActivity" />
+            >
+        </activity>
+        <activity android:name="com.aidor.secchargemobile.seccharge.ServerNotAvailableActivity" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.ChargingStationActivity"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.HomeActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.HomeActivity" />
+            >
+        </activity>
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.BatteryStatusActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aidor.secchargemobile.services.NotificationActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.aidor.secchargemobile.services.NotificationIntentService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver android:name="com.aidor.secchargemobile.services.NotificationEventReceiver" />
+        <receiver android:name="com.aidor.secchargemobile.services.NotificationServiceStarterReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.ReservationEditDeleteActivity"
+            android:label="My Reservations"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.MyReservationsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.MyReservationsActivity" />
+            >
+        </activity>
+        <activity android:name="com.aidor.secchargemobile.seccharge.NoInternetActivity" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.ReservationHistoryActivity"
+            android:parentActivityName="com.aidor.secchargemobile.seccharge.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aidor.secchargemobile.seccharge.HomeActivity" />
+            >
+        </activity>
+        <activity android:name="com.aidor.secchargemobile.seccharge.MeterValuesActivity" />
+        <activity android:name="com.aidor.secchargemobile.seccharge.StartDischargingActivity" />
+        <activity android:name="com.aidor.secchargemobile.seccharge.EngineInitializerVoice" />
+        <activity android:name="com.aidor.secchargemobile.seccharge.AddressSelectorVoice" />
+        <activity android:name="com.aidor.secchargemobile.seccharge.VoicePermissionCheck" />
+        <activity android:name="com.aidor.secchargemobile.seccharge.AddressConfirmVoice" />
+        <activity android:name="com.aidor.secchargemobile.seccharge.ReservationTimeVoice" />
+        <activity android:name="com.aidor.secchargemobile.seccharge.ReservationSummaryConfirmVoice" />
+        <activity android:name="com.aidor.secchargemobile.seccharge.PaymentVoice" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.Voice.VoiceActivity"
+            android:label="@string/title_activity_voice" />
+
+        <service
+            android:name="com.aidor.secchargemobile.services.TTSService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.Voice.ModesActivity"
+            android:label="@string/title_activity_modes" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.Voice.UserModeActivity"
+            android:label="@string/title_activity_user" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.Voice.AutoSteeringActivity"
+            android:label="@string/title_activity_auto_pilot" />
+        <activity
+            android:name="com.aidor.secchargemobile.seccharge.Voice.AutoPilotActivity"
+            android:label="@string/title_activity_auto_mode"></activity>
+    </application>
+
+</manifest>

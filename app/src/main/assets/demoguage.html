@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/splash/splash-icon.png">
+	<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" 			media="screen and (max-device-width: 320px)" />
+	<link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" 		media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" />
+	<link rel="apple-touch-startup-image" sizes="640x1096" href="images/splash/splash-screen@3x.png" />
+	<link rel="apple-touch-startup-image" sizes="1024x748" href="images/splash/splash-screen-ipad-landscape" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
+	<link rel="apple-touch-startup-image" sizes="768x1004" href="images/splash/splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
+	<link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
+	<link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
+
+	<title>Sec Charger</title>
+
+	<link href="styles/style.css"     		 rel="stylesheet" type="text/css">
+	<link href="styles/framework.css" 		 rel="stylesheet" type="text/css">
+	<link href="styles/menu.css" 		 	 rel="stylesheet" type="text/css">
+	<link href="styles/owl.theme.css" 		 rel="stylesheet" type="text/css">
+	<link href="styles/swipebox.css"		 rel="stylesheet" type="text/css">
+	<link href="styles/font-awesome.css"	 rel="stylesheet" type="text/css">
+	<link href="styles/animate.css"			 rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="scripts/jquery.js" ></script>
+	<script type="text/javascript" src="scripts/jqueryui.js"></script>
+	<script type="text/javascript" src="jquery-easing-compatibility.1.2.pack"></script>
+	<!--<script type="text/javascript" src="scripts/jqueryui.js" ></script>-->
+	<script type="text/javascript" src="scripts/framework.plugins.js" ></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+	<script type="text/javascript" src="js/countries.js"></script>
+	<script type="text/javascript" src="js/battery.js"></script>
+	<link rel='stylesheet' type='text/css' href='css/battery.css'>
+	<script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+	<script src="liquidFillGauge.js" language="JavaScript"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script type="text/javascript">
+function stopChargin()
+{
+JSInterface.changeActivity();
+}
+</script>
+	<script>
+
+
+
+
+	</script>
+</head>
+<body style="background:#000;margin-top:0;" >
+
+
+<div class="all-elements">
+	<div id="perspective" class="perspective effect-airbnb"><!--this houses the entire page, and creates the effect-->
+
+		<div class="outer-nav">
+			<div class="inner-nav">
+				<div class="nav-item">
+					<a href="index.html" >
+						<i class="nav-icon fa fa-dashboard"></i>
+						Dashboard
+					</a>
+				</div>
+				<div class="nav-item">
+					<a href="basicprofile.html" >
+						<i class="nav-icon fa fa-cog"></i>
+						My Profile
+					</a>
+				</div>
+
+				<div class="nav-item">
+					<a href="manageVehicle.html" >
+						<i class="nav-icon fa fa-car"></i>
+						My Vehicles
+					</a>
+
+				</div>
+				<!--           <div class="nav-item" >
+                                <a id="closeMenu" href=""  onclick="logout()">
+                                    <i class="nav-icon fa fa-times"></i>
+                                    Log out!
+                                </a>
+                            </div>
+                -->
+			</div>
+		</div>
+		<div class="header-clear" style="height:38px;"></div>
+		<div class="perspective_container"><!--the "moving to the left" content box-->
+			<div class="wrapper" style="background:#000;margin-top:-50px;height:1200px;"><!-- wrapper needed for scroll -->
+
+
+				<div class="content">
+					<div class="decoration"></div>
+					<div class="one-half-responsive">
+						<!--<h4>State Of Charge</h4>-->
+
+						<div id="box" style="margin:0 auto;">
+							<div id="battery" style="position:relative;">
+								<h1 class="batStatus">88</h1><span class="batStatus1">%</span>
+								<p class="batEsti" >Estimated Time : <span style="font-size:18px;" id="estiTime" >00:00</span> </p>
+
+
+							</div>
+						</div>
+
+						<div id="batterylevel" style="" >
+						</div>
+						<h1 id="status"></h1>
+						<button class="buttonWrap button button-green contactSubmitButton" onclick="stopChargin()" >Stop Charging</button>
+
+
+
+
+					</div>
+					<div class="decoration hide-if-responsive"></div>
+					<div class="footer-section">
+						<p class="footer-text">
+
+						</p>
+
+					</div>
+				</div><!-- Content-->
+
+			</div><!-- wrapper -->
+		</div><!-- /perspective container -->
+	</div><!-- /perspective -->
+</div><!--/all element-->
+<script type="text/javascript">
+	var $ = jQuery.noConflict();
+	
+	var flag = false;
+
+	var userid = app.setCurrentUserID();
+	console.log("local userid:"+userid);
+	   // setup the image
+    var b = new Battery("assets/bat_full.png","assets/bat_empty_light.png","assets/bat_critical.png",279,109);
+	
+	var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
+$(document).ready(function(){
+	updateBatteryStatusFormServer(true);
+	$("#battery").append(b.domElement);
+	/* Call this ajax function after 10 seconds. So that user will get updated by battery status*/
+	setInterval(updateBatteryStatusFormServer, 10000);
+
+});
+
+
+/* Update battery status form server */
+var estDisplayTime = "display:block";
+var chargingStatus= "Charging Status :OFF";
+var imgSrc = "images/error.png";
+function updateBatteryStatusFormServer(showNumberAnimation) {
+	$.ajax({
+			method :"get",
+			data : {},
+			//url: myurl+"soc/getstatus/"+userid,
+			url:"http://.0.100:8011/seccharge/test/soc/getstatus/"+userid,
+			success:function( msg ) {
+				if(msg != "false") {
+					var width = Math.round((( msg) * 279) / 100);
+					$("#fullBatteryDiv").animate({
+					width:  width
+					},2000,function(){console.log("Amit")});
+					
+					var output = "";
+					$(".batStatus").text(msg);
+					output += '<h6 style="'+ estDisplayTime +'" id="estTravelTime" > Estimated Travel :'+(msg*3)+''+'km'+' </h6>';
+					/*For proper output */
+					output += '<h6 id="chargingNumaricStatus" style="'+ estDisplayTime +'" >You havn\'t completed a charging in 50days.';
+					if(((100- msg) *3) > 60 ) {
+						var estimatedHour = Math.floor(((100- msg) *3)/60);
+						var estimatedTime = ((100- msg) *3)%60;
+							$("#estiTime").text( (estimatedHour <= 9 ? "0"+ estimatedHour : estimatedHour) +':'+( estimatedTime <= 9 ? "0"+ estimatedTime : estimatedTime ) );
+					} else {
+					console.log("In Else");
+					var estimatedMin = ((100- msg) *3);
+						$("#estiTime").text("00:" + (estimatedMin <= 9 ? "0"+ estimatedMin : estimatedMin ));
+					}
+					output += ' </h6>'; 
+				/* Code for adding error image*/
+				output += '<image src="'+imgSrc+'" class="Error" id="middleImg" />';
+				
+					output += '<h6 id="charingStatus">'+chargingStatus+'</h6>';
+					$("#batterylevel").html(output);
+					if(showNumberAnimation) {
+						$('.batStatus').counterUp({
+							delay: 10,
+							time: 1000
+						});
+					}
+					showStatus(msg);
+				}else{
+					alert('Something went wrong! Please try again later.');
+				}		
+			}
+			/*Here 10000 means 10 seconds */
+	});
+}
+
+function tempChangeBatteryCharging() {
+	flag = !flag;
+	if( flag ) {
+	$("#estTravelTime").css("display","none");
+	estDisplayTime = "display:none";
+	
+		b.changeBatteryToChargingOrNot(true);
+		$(".batEsti").css("display","block");
+		
+		$(".batStatus").animate({
+			left: "-=50",
+		}, 1000);
+		
+		$(".batStatus1").animate({
+			left: "-=50",
+		}, 1000);
+		$("#chargingNumaricStatus").css("display","none");
+		$("#middleImg").prop("src","images/progess-bar.png");
+		imgSrc = "images/progess-bar.png";
+		$("#charingStatus").text("Charging Status :ON");
+		chargingStatus ="Charging Status :ON";
+	} else {
+		b.changeBatteryToChargingOrNot(false);
+		estDisplayTime = "display:block";
+		$("#estTravelTime").css("display","block");
+		$(".batEsti").css("display","block");
+		$(".batStatus").animate({
+			left: "+=50",
+		}, 1000);
+		$(".batStatus1").animate({
+			left: "+=50",
+		}, 1000);
+		$("#middleImg").prop("src","images/error.png");
+		imgSrc = "images/error.png";
+		$("#chargingNumaricStatus").css("display","block");
+	
+		$("#charingStatus").text("Charging Status :OFF");
+		chargingStatus ="Charging Status :OFF";
+	}
+}
+	function showStatus(msg){
+		var level = msg;
+		//for horrizontal view battery
+		b.updateBattery(level);
+	}	
+	function myProfile(){
+		
+		window.location.href="basicprofile.html";
+	
+		}
+
+
+		function login(){
+		window.location.href="login.html";
+	
+		}		
+		
+		function myVehicle(){
+			window.location.href="manageVehicle.html";
+		}
+		
+		function logout(){
+		
+		var userid = window.localStorage.getItem("local_userid");
+		window.localStorage.clear();
+		alert('userid'+userid);
+		window.location.href="login.html";
+
+		}
+</script>
+<script type="text/javascript" src="scripts/menu.js"></script>
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

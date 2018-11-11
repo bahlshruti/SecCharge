@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/list_item_background_selector"
+       >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:textSize="18sp"
+            android:id="@+id/txtStart"
+            />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:id="@+id/imgTime"
+            android:layout_toRightOf="@id/txtStart"
+            android:src="@drawable/icon_time"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/colorAccent"
+            android:layout_toRightOf="@id/imgTime"
+            android:id="@+id/tvStartTimeItem"
+            android:textSize="18sp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/12/12"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/tvReservationDate"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10sp"
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+
+            android:id="@+id/imgAddress"
+            android:src="@drawable/icon_location"
+            />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvStreetCity"
+        android:text="240 McLeod Street, Ottawa"
+        android:textSize="18dp"
+        />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STATUS "
+        android:layout_toRightOf="@id/txtStart"
+        android:id="@+id/txtStatus"
+        android:textSize="18sp"
+        />
+
+        <TextView
+            android:background="@drawable/rounded_edges_green"
+            android:padding="6dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="paymentPreAuthorized"
+            android:layout_marginLeft="10sp"
+
+            android:id="@+id/tvStatus"
+            android:textSize="14dp"
+            />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+</LinearLayout>

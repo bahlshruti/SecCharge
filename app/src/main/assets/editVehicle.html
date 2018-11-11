@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/splash/splash-icon.png">
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" 			media="screen and (max-device-width: 320px)" />  
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" 		media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<link rel="apple-touch-startup-image" sizes="640x1096" href="images/splash/splash-screen@3x.png" />
+<link rel="apple-touch-startup-image" sizes="1024x748" href="images/splash/splash-screen-ipad-landscape" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
+<link rel="apple-touch-startup-image" sizes="768x1004" href="images/splash/splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
+<link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
+<link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
+
+<title></title>
+
+<link href="styles/style.css"     		 rel="stylesheet" type="text/css">
+<link href="styles/framework.css" 		 rel="stylesheet" type="text/css">
+<link href="styles/menu.css" 		 	 rel="stylesheet" type="text/css">
+<link href="styles/owl.theme.css" 		 rel="stylesheet" type="text/css">
+<link href="styles/swipebox.css"		 rel="stylesheet" type="text/css">
+<link href="styles/font-awesome.css"	 rel="stylesheet" type="text/css">
+<link href="styles/animate.css"			 rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jqueryui.js"></script>
+<script type="text/javascript" src="scripts/framework.plugins.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<script>
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+	var $ = jQuery.noConflict();
+	var userid = window.localStorage.getItem("local_userid");
+	var vid = getParameterByName('id');
+	
+	$(document).ready( function ( ){
+		if(userid == null){
+		alert('please log in');
+		login();
+		}else{
+					
+				$.ajax({
+				type:"get",
+				data:{"userid":userid,"id":vid},
+				dataType: "text",
+				crossDomain: true,
+				url:myurl+"/register/vehicledataid",
+					success:function(msg){
+					
+					console.log("receivedata:"+msg);
+					
+					var res = JSON.parse(msg);
+					var output ="";
+					
+					for(var i=0; i<res.length; i++){
+					$("#make").val(res[i].MAKE);
+					$("#year").val(res[i].YEAR);
+					
+					$("#data").val(res[i].MODEL);
+					$("#platenumber").val(res[i].PLATENUMBER);
+					$("#vehiclevin").val(res[i].VEHICLEVIN);
+					
+					$("#vid").val(res[i].ID);
+					
+					}
+				}
+			});
+		}
+	
+	
+				
+				$("#updateForm").submit(function( event ){
+					event.preventDefault();
+					var temp = $("#vid").val();
+					$.ajax({
+						type:"get",
+						data:$(this).serialize(),
+						dataType: "text",
+						crossDomain: true,
+						url:myurl+"/register/editvehicle?userid="+userid,
+						success:function(msg){
+						console.log(msg);
+						if( msg == "updated successfully"){
+						window.location.href  = "manageVehicle.html";
+						alert("Profile Updated Successfully.");
+						window.location.href = "";
+						}else{
+						alert("Something Wrong!");
+						}
+								
+						
+					}
+				});
+			});
+	
+			
+	
+	
+	});
+	
+	
+		function login(){
+		window.location.href="login.html";
+	
+		}
+		function myProfile(){
+		
+		window.location.href="basicprofile.html";
+	
+		}	
+		
+		function myVehicle(){
+		
+		window.location.href="manageVehicle.html";
+
+		}
+		
+		function logout(){
+		
+		var userid = window.localStorage.getItem("local_userid");
+		window.localStorage.clear();
+		alert('userid'+userid);
+		window.location.href="login.html";
+
+		}
+		
+</script>
+
+
+
+
+
+
+<body >
+
+<div class="all-elements">
+<div id="perspective" class="perspective effect-airbnb"><!--this houses the entire page, and creates the effect-->
+    <div class="header">
+        <a href="#" id="showMenu"><i class="fa fa-navicon"></i></a>
+        <a href="#" id="pageLogo"><img src="images/logo.png" alt="img"></a>
+        <a href="demoguage.html" id="openMail"><i class="fa fa-battery-3"></i></a>
+    </div> 	
+    <div class="outer-nav">
+        <div class="inner-nav">
+            <div class="nav-item">
+                <a href="index.html" class="active-item">
+                    <i class="nav-icon fa fa-dashboard"></i>
+                    Dashboard
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="" onclick="myProfile()" >
+                    <i class="nav-icon fa fa-cog"></i>
+                    My Profile
+                </a>       
+            </div>
+            
+            <div class="nav-item">
+                <a href="" onclick="myVehicle()" >
+                    <i class="nav-icon fa fa-car"></i>
+                    My Vehicles
+                </a>
+                
+            </div>
+            <div class="nav-item">
+                <a href="#" class="deploy-nav-sub-item">
+                    <i class="nav-icon fa fa-arrow-right"></i>
+                    Visit
+                </a>
+                <div class="nav-sub-item">
+                    <a href="#">Website</a>
+                    <a href="#">Android App</a>
+                    <a href="#">IOS APP</a>
+                    <a href="#">Windows App</a>
+                </div>
+            </div>
+            
+            <div class="nav-item" >
+                <a id="closeMenu" href=""  onclick="logout()">
+                    <i class="nav-icon fa fa-times"></i>
+                    Log out!
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="perspective_container"><!--the "moving to the left" content box-->
+    <div class="wrapper"><!-- wrapper needed for scroll -->
+
+
+        <div class="content">
+            <div class="decoration"></div>
+            <div class="one-half-responsive">
+                
+                <div class="container no-bottom">
+                    <div class="contact-form no-bottom">
+                        
+				<!--http://.2.15:8011/seccharge/register/mob-->
+
+                        <form action="" method="post" class="updateForm" id="updateForm" >
+                            <fieldset>
+								<br>
+								
+								 <input type="text" id="vid" name="id"  value="" 
+									class="contactField requiredField" style="display:none;"/>
+								
+								 <div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Year:<span>(required)</span></label>
+                                    <input type="text" id="year" name="year"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+                                <div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Make:<span>(required)</span></label>
+                                    <input type="text" id="make" name="make"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Model:<span>(required)</span></label>
+                                    <input type="text" id="data" name="data"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+								
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Vehicle Identification Number:<span>(required)</span></label>
+                                    <input type="text" id="vehiclevin" name="vehiclevin"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Plate Nubmer:<span>(required)</span></label>
+                                    <input type="text" id="platenumber" name="platenumber"  value="" 
+									class="contactField requiredField" />
+								 </div>	
+                               
+
+                                <div class="formSubmitButtonErrorsWrap">
+                                    <input type="submit" class="buttonWrap button button-green contactSubmitButton" id="addVehicle"  value="Update" />
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="decoration hide-if-responsive"></div>
+
+
+            <div class="footer-section">
+                <p class="footer-text">
+                       
+                    </p>
+                   
+                </div>
+            </div><!-- Content-->
+      
+        </div><!-- wrapper -->
+    </div><!-- /perspective container -->
+</div><!-- /perspective -->
+</div><!--/all element-->
+    
+<script type="text/javascript" src="scripts/menu.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/splash/splash-icon.png">
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" 			media="screen and (max-device-width: 320px)" />  
+<link rel="Credentialssapple-touch-startup-image" href="images/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" />
+<link rel="apple-touch-startup-image" sizes="640x1096" href="images/splash/splash-screen@3x.png" />
+<link rel="apple-touch-startup-image" sizes="1024x748" href="images/splash/splash-screen-ipad-landscape" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
+<link rel="apple-touch-startup-image" sizes="768x1004" href="images/splash/splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
+<link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
+<link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
+
+<title>Sec Charger</title>
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+<link href="styles/framework.css" rel="stylesheet" type="text/css">
+<link href="styles/menu.css" rel="stylesheet" type="text/css">
+<link href="styles/owl.theme.css" rel="stylesheet" type="text/css">
+<link href="styles/swipebox.css" rel="stylesheet" type="text/css">
+<link href="styles/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="styles/animate.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jqueryui.js"></script>
+<script type="text/javascript" src="scripts/framework.plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+
+  <script>
+  var $ = jQuery.noConflict();
+    jQuery(document).ready(function($){
+	window.localStorage.clear();
+    $('#contactForm').submit(function( e ){
+        e.preventDefault();
+			$.ajax({
+			type: 'GET',
+			data:$( this ).serialize(),
+			dataType: "text",
+			crossDomain: true,
+			url: myurl+'login/mob',
+			success: function(msg) {
+				console.log("res"+msg);
+				if(msg == "Invalid Credentials"){
+					alert('Invalid Credentials.');
+				}else if( msg == "NotVerified") {
+					alert('Account not Verified.');
+				} else 
+				{
+				window.localStorage.setItem("local_userid",msg);
+				var userid = window.localStorage.getItem("local_userid");
+				console.log(userid);	
+				
+				window.location.href='index.html';
+			}	
+			},
+			error: function(){
+				alert("Error while login");
+			}
+        });
+        return false;
+    });
+    });
+    </script>
+</head>
+<body>
+
+<div id="preloader">
+	<div id="status">
+    	<p class="center-text">
+			Loading the content...
+            <em>Loading depends on your connection speed!</em>
+        </p>
+    </div>
+</div>
+
+<div class="all-elements">
+<div id="perspective" class="perspective effect-airbnb"><!--this houses the entire page, and creates the effect-->
+   	
+    <div class="outer-nav">
+        <div class="inner-nav">
+            <div class="nav-item">
+                <a href="index.html" class="active-item">
+                    <i class="nav-icon fa fa-dashboard"></i>
+                    Dashboard
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#">
+                    <i class="nav-icon fa fa-cog"></i>
+                    My Account
+                </a>       
+            </div>
+            <div class="nav-item">
+                <a href="#" class="">
+                    <i class="nav-icon fa fa-road"></i>
+                    Reserve
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#">
+                    <i class="nav-icon fa fa-car"></i>
+                    Trip Planner
+                </a>
+                
+            </div>
+            <div class="nav-item">
+                <a href="#" class="deploy-nav-sub-item">
+                    <i class="nav-icon fa fa-arrow-right"></i>
+                    Visit
+                </a>
+                <div class="nav-sub-item">
+                    <a href="#">Website</a>
+                    <a href="#">Android App</a>
+                    <a href="#">IOS APP</a>
+                    <a href="#">Windows App</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="forget.html">
+                    <i class="nav-icon fa fa-envelope"></i>
+                    Forget Password
+                </a>
+            </div>
+			<div class="nav-item">
+                <a href="sign-up.html">
+                    <i class="nav-icon fa fa-check-square-o"></i>
+                    Sign up
+                </a>
+            </div>
+            <div class="nav-item">
+                <a id="closeMenu" href="#">
+                    <i class="nav-icon fa fa-times"></i>
+                    Close
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header-clear"></div>
+    <div class="perspective_container"><!--the "moving to the left" content box-->
+        <div class="wrapper" style="margin-top:-60px;"><!-- wrapper needed for scroll -->
+
+            
+            <div class="content">
+                <div class="decoration"></div>
+                <div class="one-half-responsive">
+                    <a href="#" id="pageLogo"><img src="images/logo.png" alt="img" style="width:200px;"></a>
+					<p class="center-text" style="font-size:18px;color:black;"> <br>Securely charge your EV car, <br> Wherever you go </p>
+                    <div class="container no-bottom">
+                        <div class="contact-form no-bottom"> 
+                            <div class="formSuccessMessageWrap" id="formSuccessMessageWrap">
+                                <div class="big-notification green-notification">
+                                    <h3 class="uppercase">Sent </h3>
+                                    <a href="#" class="close-big-notification">x</a>
+                                    <p>Thank you!</p>
+                                </div>
+                            </div>
+                        
+                            <form action="" method="post" class="contactForm" id="contactForm">
+                                <fieldset>
+                               <!-- <div class="formValidationError" id="contactNameFieldError">
+                                        <div class="static-notification-red tap-dismiss-notification">
+                                            <p class="center-text uppercase">Name is required!</p>
+                                        </div>
+                                    </div>             
+                                    <div class="formValidationError" id="contactEmailFieldError">
+                                        <div class="static-notification-red tap-dismiss-notification">
+                                            <p class="center-text uppercase">Mail address required!</p>
+                                        </div>
+                                    </div> 
+                                    <div class="formValidationError" id="contactEmailFieldError2">
+                                        <div class="static-notification-red tap-dismiss-notification">
+                                            <p class="center-text uppercase">Mail address must be valid!</p>
+                                        </div>
+                                    </div> 
+                                    <div class="formValidationError" id="contactMessageTextareaError">
+                                        <div class="static-notification-red tap-dismiss-notification">
+                                            <p class="center-text uppercase">empty!</p>
+                                        </div>
+                                    </div>-->
+									
+									
+									<!--<div class="formValidationError" id="usernameError">
+										<div class="static-notification-red tap-dismiss-notification">
+											<p class="center-text uppercase">Invalid Username or Password</p>
+										</div>
+									</div>
+									-->
+									
+                                    <div class="formFieldWrap">
+                                        <label class="field-title contactNameField" for="contactNameField">Username:<span>(required)</span></label>
+                                        <input type="text" name="username" value="" required class="contactField requiredField" />
+                                    </div>
+                                    <div class="formFieldWrap">
+                                        <label class="field-title contactNameField" for="contactNameField">Password: <span>(required)</span></label>
+                                        <input type="password" name="password" value="" required class="contactField requiredField" id="contactNameField"/>
+                                    </div>
+									
+									<label><a href="forget.html">Forget Password</a><span></label>
+                                    
+                                    <div class="formSubmitButtonErrorsWrap">
+                                        <input type="submit"  value="Login" class="buttonWrap button button-green contactSubmitButton" id="sbtBtn" 
+										data-formId ="contactForm"/>
+										
+										
+						
+                                    </div>
+                                </fieldset>
+                            </form>   
+
+<p style="font-size:16px;color:black;text-align:center;">Don't have a SecCharge account yet?<br>
+				Signing up is quick and easy</p>				<a class="button button-green" href="sign-up.html" style="display:block;margin:-10px auto;text-align:center;width:43%;border-radius:8px;">Register</a>			
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="decoration hide-if-responsive"></div>
+                              
+                
+                <div class="footer-section">
+                    <p class="footer-text">
+                       
+                    </p>
+                   
+                </div>
+            </div><!-- Content-->
+      
+        </div><!-- wrapper -->
+    </div><!-- /perspective container -->
+</div><!-- /perspective -->
+
+</div>
+
+<script type="text/javascript" src="scripts/menu.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

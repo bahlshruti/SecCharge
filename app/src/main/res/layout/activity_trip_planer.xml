@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:id="@+id/trip_planner_linear_layout">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="true"
+        sothree:umanoPanelHeight="68dp"
+        sothree:umanoParalaxOffset="100dp"
+        sothree:umanoShadowHeight="4dp">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryT"
+            android:layout_gravity="top"
+            android:id="@+id/header_linear_layout"
+            >
+            <AutoCompleteTextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Source location"
+                android:textColorHint="@color/grey_400"
+                android:padding="10sp"
+                android:textColor="@color/white"
+                android:popupBackground="#f7ffffff"
+                android:alpha="0.94"
+                android:id="@+id/source_locationTF"
+                android:layout_marginLeft="0dp"
+                android:singleLine="true"
+                android:layout_alignParentTop="true"/>
+            <Button
+                android:id="@+id/trip_button"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:text="Go"
+                android:background="@drawable/green_button_selector"
+                android:alpha="0.85"
+                android:textColor="@drawable/greenbutton_text_selector"
+                android:onClick="goClicked"
+                android:layout_marginTop="39dp"
+                android:layout_toRightOf="@+id/destination_locationTF"
+
+                />
+
+            <AutoCompleteTextView
+                android:padding="10sp"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:popupBackground="#f7ffffff"
+
+                android:textColor="@color/white"
+                android:alpha="0.94"
+                android:hint="Destination location"
+                android:textColorHint="@color/grey_400"
+                android:id="@+id/destination_locationTF"
+                android:singleLine="true"
+                android:layout_below="@+id/source_locationTF"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_linear_layout"
+                android:layout_below="@+id/destination_locationTF"
+                android:orientation="vertical"
+                android:background="#0d0d0d"
+                android:alpha="0.85"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="History"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:id="@+id/historyTF"/>
+
+                <ListView
+                    android:padding="10dp"
+                    android:id="@+id/history_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.9"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/destination_locationTF"
+
+                    >
+                </ListView>
+            </LinearLayout>
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                app:cameraZoom="12"
+                tools:ignore="MissingPrefix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/history_linear_layout"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listview_linear_layout"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:id="@+id/slideupTF"
+                android:text="slide up ^^"/>
+            <ListView
+                android:id="@+id/map_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </ListView>
+        </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+</LinearLayout>
+

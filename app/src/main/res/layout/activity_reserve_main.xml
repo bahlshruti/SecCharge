@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="@color/colorPrimaryT"
+
+    >
+    <include layout="@layout/app_bar_normal"
+        />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/icon_chargingport"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHARGING PORT"
+            android:id="@+id/txt_chargingPort"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textStyle="bold"/>
+            </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rgPorts"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbLevel2"
+                android:textColor="@color/secondary_text_material_dark"
+                android:textStyle="bold"
+                android:text="Level 2, J1772, 6.6 kW"
+                android:checked="true"
+               />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text_material_dark"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:id="@+id/fastDC"
+                android:text="FastDC: CHAdeMO"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/tabDate"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:src="@drawable/icon_calendar"/>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESERVATION DATE "
+                android:id="@+id/txt_reservationDetails"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textStyle="bold"
+                />
+
+                </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_dateSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center_horizontal">
+
+
+            <EditText
+
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorAccent"
+                android:focusable="false"
+
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_myprofile"
+                android:text="--/--/--"
+                android:textAlignment="center"
+                android:id="@+id/etSelectDate"
+                android:editable="false"
+                />
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:id="@+id/btnSelectDate"
+                android:src="@drawable/calendar_icon"
+                />
+
+
+
+        </LinearLayout>
+            </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/tabTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/layout_reservationTimeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_2sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:src="@drawable/icon_time"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIME"
+
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_9sdp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time Selected: "
+
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_9sdp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTimeSelected"
+                android:textColor="@color/colorAccent"
+                android:text=""
+                android:textSize="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+
+                />
+
+                </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+            <ListView
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/listTime"
+                android:fadeScrollbars="false"
+                android:soundEffectsEnabled="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+
+                android:choiceMode="singleChoice"
+                android:background="@drawable/listview_background"
+                android:listSelector="@drawable/listview_selector"
+                android:visibility="invisible"
+                >
+
+
+            </ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <NumberPicker
+                    android:layout_width="match_parent"
+
+                    android:layout_height="150dp"
+                    android:id="@+id/npTime"
+                    android:divider="@color/colorAccent"
+
+                    android:soundEffectsEnabled="true"
+
+                    >
+
+                </NumberPicker>
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:id="@+id/btnNext1"
+                android:alpha="0.8"
+                android:background="@drawable/green_button_selector"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textColor="@drawable/greenbutton_text_selector"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+        </ScrollView>
+
+
+    </FrameLayout>
+
+</LinearLayout>

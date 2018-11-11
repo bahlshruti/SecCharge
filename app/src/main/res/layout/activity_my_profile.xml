@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+
+    >
+    <include layout="@layout/app_bar_normal" />
+
+
+    <ScrollView
+       android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:civ_border_color="@color/colorAccent"
+                    app:civ_border_width="4dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/carlogo"/>
+
+            <TextView
+                android:id="@+id/tvmyprofile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:text="My Profile"
+
+                android:textStyle="bold"
+
+                 />
+
+
+                </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First Name"
+                android:id="@+id/txtfirstname"
+                android:layout_below="@id/tvmyprofile"
+                android:layout_marginTop="15sp"
+                android:textColor="@color/colorPrimary" />
+
+
+            <EditText
+                android:id="@+id/etfirstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtfirstname"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Last Name"
+                android:id="@+id/txtlastname"
+                android:layout_below="@id/etfirstname"
+
+                android:layout_marginTop="15dp"
+                android:textColor="@color/colorPrimary" />
+
+
+            <EditText
+                android:id="@+id/etlastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtlastname"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:id="@+id/txtemail"
+                android:layout_below="@id/etlastname"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etemailProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtemail"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address Line 1"
+                android:id="@+id/txtaddress1"
+                android:layout_below="@id/etemailProfile"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etaddress1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtaddress1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:hint="Address  Line-1"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address Line 2"
+                android:id="@+id/txtaddress2"
+                android:layout_below="@id/etaddress1"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etaddress2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtaddress2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:hint="Address Line-2"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Country"
+                android:id="@+id/txttcountry"
+                android:layout_below="@id/etaddress2"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txttcountry"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Province"
+                android:id="@+id/txtprovince"
+                android:layout_below="@id/spinnerCountry"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerProvince"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtprovince"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:id="@+id/txtcity"
+                android:layout_below="@id/spinnerProvince"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+
+            <EditText
+                android:id="@+id/etcity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtcity"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:hint="City"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Postal Code 2"
+                android:id="@+id/txtpostalcode2"
+                android:layout_below="@id/etcity"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+
+            <EditText
+                android:id="@+id/etpostalcode2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtpostalcode2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:hint="Postal Code-2:"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+
+     <!--       <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:id="@+id/txtgender"
+                android:layout_below="@id/etpostalcode2"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+-->
+
+       <!--   <EditText
+                android:id="@+id/etgender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtgender"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:hint="Gender"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/text_white_text_icons_100"
+                android:textColorHint="#BDBDBD" />
+        -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone No."
+                android:id="@+id/txtphoneno"
+                android:layout_below="@id/etpostalcode2"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtphoneno"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_myprofile"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="#BDBDBD" />
+
+            <Button
+                android:id="@+id/btnprofile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etphone"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/green_button_selector"
+                android:alpha="0.85"
+                android:text="Update Profile"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@drawable/greenbutton_text_selector" />
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/splash/splash-icon.png">
+    <link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" 			media="screen and (max-device-width: 320px)" />
+    <link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" 		media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" />
+    <link rel="apple-touch-startup-image" sizes="640x1096" href="images/splash/splash-screen@3x.png" />
+    <link rel="apple-touch-startup-image" sizes="1024x748" href="images/splash/splash-screen-ipad-landscape" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
+    <link rel="apple-touch-startup-image" sizes="768x1004" href="images/splash/splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
+    <link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
+    <link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
+
+    <title>Sec Charger</title>
+
+    <link href="styles/style.css"     		 rel="stylesheet" type="text/css">
+    <link href="styles/framework.css" 		 rel="stylesheet" type="text/css">
+    <link href="styles/menu.css" 		 	 rel="stylesheet" type="text/css">
+    <link href="styles/owl.theme.css" 		 rel="stylesheet" type="text/css">
+    <link href="styles/swipebox.css"		 rel="stylesheet" type="text/css">
+    <link href="styles/font-awesome.css"	 rel="stylesheet" type="text/css">
+    <link href="styles/animate.css"			 rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="scripts/jquery.js" ></script>
+    <script type="text/javascript" src="scripts/jqueryui.js" ></script>
+    <script type="text/javascript" src="scripts/framework.plugins.js" ></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+	<script type="text/javascript" src="js/countries.js"></script>
+
+
+	
+ <script type="text/javascript" src="cordova.js"></script>
+ 
+<script  type="text/javascript">
+	var $ = jQuery.noConflict();
+	var userid = window.localStorage.getItem("local_userid");
+	console.log(userid);
+	
+	function print_country(){
+		// given the id of the <select> tag as function argument, it inserts <option> tags
+		var _select = $('#country');
+		_select.append( new Option('Select Country',"") );
+		$.each(country_arr, function(val, text) {
+			_select.append( new Option(text,text) );
+		});
+		_select.prop('selected Index',0);
+	}
+	
+$(document).ready(function( ) {
+	 print_country();
+	 
+	$( "#country" ).on('change',function(e) {
+	
+	   var state = $('#state');
+	   var country = $('#country');
+	   $('#state option:gt(0)').remove();
+	   $('#state').trigger("chosen:updated");
+		var state_arr = s_a[country.prop('selectedIndex')-1].split("|");
+		$.each(state_arr, function(val, text) {
+			state.append( new Option(text,text) );
+		});
+		 state.prop('selectedIndex',0);
+		 $('#state').trigger("chosen:updated");
+	
+	});
+	if(userid == null){
+		alert('please log in');
+		login();
+	}else{
+	
+	$.ajax({
+				type:"get",
+				data:{"userid":userid},
+				dataType: "text",
+				crossDomain: true,
+				url:myurl+"/login/basicprofile",
+					success:function(msg){
+						console.log("receivedata:"+msg);
+						
+						var res = JSON.parse(msg);
+						console.log(res.PROVINCE);
+
+						$("#username").val(res.USERSALT);
+						$("#fname").val(res.FIRSTNAME);
+						$("#lname").val(res.LASTNAME);
+						$("#email").val(res.EMAIL);						
+						$("#address1").val(res.ADDRESS1);
+						$("#address2").val(res.ADDRESS2);
+						$("#city").val(res.CITY);						
+						$("#phone").val(res.CELLPHONE);
+						$("#country").val(res.COUNTRY);
+						$("#postalcode").val(res.POSTALCODE);
+						$("#country").trigger("change");
+						$("#state").val(res.PROVINCE);
+						
+							
+						//window.location.href="index.html";
+				
+					}
+				});
+		
+				}
+				$("#updateForm").submit(function( event ){
+					event.preventDefault();
+					$.ajax({
+						type:"get",
+						data:$(this).serialize(),
+						dataType: "text",
+						crossDomain: true,
+						url:myurl+"/register/updateprofile?userid="+userid,
+						success:function(msg){
+								alert("Profile Updated Successfully.");
+						
+					}
+				});
+			}); 
+		});
+		
+		
+		function myProfile(){
+		
+		window.location.href="basicprofile.html";
+	
+		}
+
+
+		function login(){
+		window.location.href="login.html";
+	
+		}		
+		
+		function myVehicle(){
+		
+		window.location.href="manageVehicle.html";
+
+		}
+		
+		function logout(){
+		
+		var userid = window.localStorage.getItem("local_userid");
+		window.localStorage.clear();
+		alert('userid'+userid);
+		window.location.href="login.html";
+
+		}
+		
+		
+		
+		
+</script>
+<style>
+    .file_button_container,
+      .file_button_container input {
+           background: #000 url(http://i.stack.imgur.com/BT5AB.png) left top no-repeat;
+           height: 45px;
+           width: 255px;
+		   margin:0;
+		   padding:0;
+		   border-radius:5px;
+		   -moz-border-radius:5px;
+		   -webkit-border-radius:5px;
+       }
+
+       .file_button_container {
+          background: #000 url(http://i.stack.imgur.com/BT5AB.png) left top no-repeat;
+		  background-size: 255px 45px;
+		 
+		   
+       }
+    
+       .file_button_container input {
+           opacity: 0;
+       }
+</style>
+</head>
+<body>
+
+<div id="preloader">
+    <div id="status">
+        <p class="center-text">
+            Loading the content...
+            <em>Loading depends on your connection speed!</em>
+        </p>
+    </div>
+</div>
+
+<div class="all-elements">
+<div id="perspective" class="perspective effect-airbnb"><!--this houses the entire page, and creates the effect-->
+    <div class="header">
+        <a href="#" id="showMenu"><i class="fa fa-navicon"></i></a>
+        <a href="#" id="pageLogo"><img src="images/logo.png" alt="img"></a>
+		<a href="demoguage.html" id="openMail"><i class="fa fa-battery-3"></i></a>
+    </div> 	
+    <div class="outer-nav">
+        <div class="inner-nav">
+            <div class="nav-item">
+                <a href="index.html" >
+                    <i class="nav-icon fa fa-dashboard"></i>
+                    Dashboard
+                </a>
+            </div>
+             <div class="nav-item">
+                <a href="account.html" >
+                    <i class="nav-icon fa fa-cog"></i>
+                    Account
+                </a>  
+					
+            </div>
+            
+            
+            <div class="nav-item" >
+                <a id="closeMenu" href=""  onclick="logout()">
+                    <i class="nav-icon fa fa-times"></i>
+                    Log out!
+                </a>
+            </div>
+        </div>
+    </div>
+<div class="header-clear"></div>
+<div class="perspective_container"><!--the "moving to the left" content box-->
+    <div class="wrapper"><!-- wrapper needed for scroll -->
+
+
+        <div class="content">
+            <div class="decoration"></div>
+            <div class="one-half-responsive">
+                <h4>My Profile</h4>
+								<div class="file_button_container"><input type="button" onclick="getImage()"></div>
+				<script>
+				/*$("#uploadImg").click(function(){
+					$("#profileImg").trigger("click");
+				});*/ 
+				
+				function getImage() {
+					// Retrieve image file location from specified source
+					navigator.camera.getPicture(uploadPhoto, function(message) {
+						alert('get picture failed');
+						},{
+							quality: 50,
+							destinationType: navigator.camera.DestinationType.FILE_URI,
+							sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+						}
+					);
+				}
+				function uploadPhoto() {}
+				</script>
+				<script>
+				document.addEventListener("deviceready",onDeviceReady,false);
+
+
+function onDeviceReady() {
+    alert(navigator.camera);    
+}
+
+</script>				
+				
+                <p></p>
+                <div class="container no-bottom">
+                    <div class="contact-form no-bottom">
+                        <div class="formSuccessMessageWrap" id="formSuccessMessageWrap">
+                            <div class="big-notification green-notification">
+                                <h3 class="uppercase">Sent </h3>
+                                <a href="#" class="close-big-notification">x</a>
+                                <p>Thank you!</p>
+                            </div>
+                        </div>
+				<!--myurl+""/register/mob-->
+
+                        <form action="" method="post" class="contactForm" id="updateForm" >
+                            <fieldset>
+
+                                <div class="formValidationError" id="usernameError">
+                                    <div class="static-notification-red tap-dismiss-notification" >
+                                        <p class="center-text uppercase">Name is required!</p>
+                                    </div>
+                                </div>
+                                <div class="formValidationError" id="contactEmailFieldError">
+                                    <div class="static-notification-red tap-dismiss-notification">
+                                        <p class="center-text uppercase">Mail address required!</p>
+                                    </div>
+                                </div>
+                                <div class="formValidationError" id="contactEmailFieldError2">
+                                    <div class="static-notification-red tap-dismiss-notification">
+                                        <p class="center-text uppercase">Mail address must be valid!</p>
+                                    </div>
+                                </div>
+                                <div class="formValidationError" id="contactMessageTextareaError">
+                                    <div class="static-notification-red tap-dismiss-notification">
+                                        <p class="center-text uppercase">Message field is empty!</p>
+                                    </div>
+                                </div>
+								<div class="formValidationError" id="passwordError"  >
+									<div class="static-notification-red tap-dismiss-notification">
+										<p class="center-text uppercase">Password required</p>
+									</div>
+								</div> 
+								<div class="formValidationError" id="passwordError2"  >
+									<div class="static-notification-red tap-dismiss-notification">
+										<p class="center-text uppercase">Password should be atleast 7 chactar long and should be alphanumaric.</p>
+									</div>
+								</div> 
+								<div class="formValidationError" id="cpasswordError3"  >
+									<div class="static-notification-red tap-dismiss-notification">
+										<p class="center-text uppercase">Password and confirm password should match.</p>
+									</div>
+								</div> 
+								<div class="formValidationError" id="cpasswordError">
+									<div class="static-notification-red tap-dismiss-notification">
+										<p class="center-text uppercase">Please confirm your password</p>
+									</div>
+								</div> 
+								
+								<br>
+								
+                                <div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">First Name:<span>(required)</span></label>
+                                    <input type="text" id="fname" name="fname"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Last Name:<span>(required)</span></label>
+                                    <input type="text" id="lname" name="lname"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">email:<span>(required)</span></label>
+                                    <input type="text" id="email" name="email"  value="" 
+									class="contactField requiredField requiredEmailField" />
+									
+                                </div>
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Address line 1:<span>(required)</span></label>
+                                    <input type="text" id="address1" name="address1"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Address line 2:<span>(required)</span></label>
+                                    <input type="text" id="address2" name="address2"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+                                
+                                
+								<br>
+                                <div class="formFieldWrap">
+                                   <label class="field-title contactSQuestion1Field" 
+								   for="contactSQuestion1Field">Country:<span></span></label>
+                                    <select name="country" id="country" class="contactField" >
+                                        <option value="1">---select---</option>
+                                     </select>
+                                </div>
+								<div class="formFieldWrap">
+                                   <label class="field-title contactSQuestion1Field" 
+								   for="contactSQuestion1Field">Province:<span></span></label>
+                                    <select name="province" id="state" class="contactField" >
+                                        <option value="1">---select---</option>
+                                    </select>
+                                </div>
+								
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">City:<span>(required)</span></label>
+                                    <input type="text" id="city" name="city"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+								
+								<div class="formFieldWrap">
+									
+									<label class="field-title contactNameField" for="contactNameField">Postal Code 2:<span>(required)</span></label>
+                                    <input type="text" id="postalcode" name="postalcode"  value="" 
+									class="contactField requiredField" />
+									
+                                </div>
+								<div class="formFieldWrap">
+                                   <label class="field-title contactSQuestion1Field" 
+								   for="contactSQuestion1Field">Gender:<span></span></label>
+                                    <select name="gender" class="contactField" >
+                                        <option value="1">Male</option>
+										<option value="1">Female</option>
+                                     </select>
+                                </div>
+								
+                                
+                                
+                                <div class="formFieldWrap">
+                                    <label class="field-title contactEmailField" for="contactEmailField">Phone: <span>(required)</span></label>
+                                    <input type="text" name="phone" value="" required class="contactField requiredField" id="phone"/>
+                                </div>
+
+
+                                <div class="formSubmitButtonErrorsWrap">
+                                    <input type="submit" class="buttonWrap button button-green contactSubmitButton" id="UpdateBtn"  value="Update Profile" 
+									/>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="decoration hide-if-responsive"></div>
+
+
+            <div class="footer-section">
+                <p class="footer-text">
+                       
+                    </p>
+                   
+                </div>
+            </div><!-- Content-->
+      
+        </div><!-- wrapper -->
+    </div><!-- /perspective container -->
+</div><!-- /perspective -->
+</div><!--/all element-->
+
+<script type="text/javascript" src="scripts/menu.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

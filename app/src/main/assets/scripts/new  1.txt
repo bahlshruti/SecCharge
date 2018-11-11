@@ -1,0 +1,269 @@
+dao
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/data/jpa 
+	http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<jpa:repositories base-package="com.uottawa.seccharge.repository" ></jpa:repositories>
+	<context:component-scan base-package="com.uottawa.seccharge.dataobjects"></context:component-scan>
+	<context:component-scan base-package="com.uottawa.seccharge.dao"></context:component-scan>
+	<context:annotation-config></context:annotation-config>
+	<bean id="propertyConfigurer"
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location">
+				<value>/WEB-INF/classes/com/uottawa/seccharge/config/jdbc.properties</value>
+			</property>
+	</bean>
+	 <bean id="springDataSource"
+          class="com.jolbox.bonecp.BoneCPDataSource">
+	    <property name="driverClass">
+	      <value>${jdbc.driverClass}</value>
+	    </property>
+	    <property name="jdbcUrl">
+	      <value>${jdbc.driverUrl}</value>
+	    </property>
+	    <property name="username">
+	      <value>${jdbc.userName}</value>
+	    </property>
+	    <property name="password">
+	      <value>${jdbc.userPassword}</value>
+	    </property>     
+	    <!-- bonecp config -->
+	    <property name="idleMaxAgeInMinutes">
+	      <value>${bonecp.idleMaxAgeInMinutes}</value>
+	    </property>
+	    <property name="maxConnectionsPerPartition">
+	      <value>${bonecp.maxConnectionsPerPartition}</value>
+	    </property>
+	    <property name="minConnectionsPerPartition">
+	      <value>${bonecp.minConnectionsPerPartition}</value>
+	    </property>
+	    <property name="releaseHelperThreads">
+	      <value>${bonecp.releaseHelperThreads}</value>
+	    </property>
+	    <property name="idleConnectionTestPeriodInMinutes">
+	      <value>${bonecp.idleConnectionTestPeriodInMinutes}</value>
+	    </property>
+	    <property name="acquireIncrement">
+	      <value>${bonecp.acquireIncrement}</value>
+	    </property>
+	    <property name="partitionCount">
+	      <value>${bonecp.partitionCount}</value>
+	    </property>
+	    <property name="statementsCacheSize">
+	      <value>${bonecp.statementsCacheSize}</value>
+	    </property>
+    </bean>
+
+    <bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
+        <constructor-arg ref="springDataSource"/>
+    </bean>
+    
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="springDataSource" />
+		<property name="persistenceXmlLocation" value="/WEB-INF/persistence.xml" />
+		<property name="persistenceUnitName" value="springJpaPersistenceUnit" />
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	  <!-- Create the dao object and pass the datasource to it -->
+        <bean id="mobRegisterDao" class="com.uottawa.seccharge.dataobjects.MobRegiser">
+            <property name="datasource" ref="springDataSource"/>
+        </bean>
+	
+	<tx:annotation-driven />
+</beans>
+
+
+
+MobRegister
+
+
+package com.uottawa.seccharge.dataobjects;
+
+import java.io.Serializable;
+
+public class MobRegister implements Serializable {
+String usename,password,email,question1,answer1,question2,answer2,usersalt;;
+public MobRegister(String usename,String password,String email,String question1,String answer1,String question2,String answer2)
+{
+	this.usename=usename;
+	this.password=password;
+	this.email=email;
+	this.question1=question1;
+	this.answer1=answer1;
+	this.question2=question2;
+	this.answer2=answer2;}
+public MobRegister(String usename, String password,String usersalt)
+{
+	this.usename=usename;
+	this.password=password;
+	this.usersalt=usersalt;
+}
+
+
+public String getUsersalt() {
+	return usersalt;
+}
+public void setUsersalt(String usersalt) {
+	this.usersalt = usersalt;
+}
+public String getUsename() {
+	return usename;
+}
+
+public void setUsename(String usename) {
+	this.usename = usename;
+}
+
+public String getPassword() {
+	return password;
+}
+
+public void setPassword(String password) {
+	this.password = password;
+}
+
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+
+public String getQuestion1() {
+	return question1;
+}
+
+public void setQuestion1(String question1) {
+	this.question1 = question1;
+}
+
+public String getAnswer1() {
+	return answer1;
+}
+
+public void setAnswer1(String answer1) {
+	this.answer1 = answer1;
+}
+
+public String getQuestion2() {
+	return question2;
+}
+
+public void setQuestion2(String question2) {
+	this.question2 = question2;
+}
+
+public String getAnswer2() {
+	return answer2;
+}
+
+public void setAnswer2(String answer2) {
+	this.answer2 = answer2;
+}
+
+
+}
+
+
+
+
+
+seccont
+
+
+
+	
+	/* for mobile */
+	@RequestMapping(value = "/register/mob", method = RequestMethod.POST)
+	public  @ResponseBody String registerMobile(@RequestParam(value="usename", required=false) String username,@RequestParam(value="password", required=false) String password,@RequestParam(value="email", required=false)String email,@RequestParam(value="question1", required=false)String question1,@RequestParam(value="answer1", required=false)String answer1,@RequestParam(value="question2", required=false)String question2,@RequestParam(value="answer2", required=false)String answer2) {
+		
+		GenericXmlApplicationContext gc=new GenericXmlApplicationContext("classpath:dao-context.xml");
+
+	       MobRegisterDao st=(MobRegisterDao)gc.getBean("mobRegisterDao");
+
+	        // To insert data
+	        st.insert(new MobRegister(username,password,password));
+		
+		
+		
+		return "true";
+		
+		
+	     // @ModelAttribute("theStudent") Student student
+			//return username+password+email+question1+answer1+question2+answer2;
+//			 ModelAndView mav = new ModelAndView("company");
+//		        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//		        session.beginTransaction();
+//		 
+//		        //for inserting the data into the database from spring
+//		        comp=new Company();
+//		        comp.setId(5); // for id
+//		        comp.setName("tata docomo");  //for name
+//		        session.save(comp);  // for insertion operation
+//		 
+//		        // HQL: Company is a POJO class
+//		        List l = session.createQuery("from Company").list();
+//		 
+//		        // passed company list to the view
+//		        mav.addObject("company_list", l);
+//		 
+//		        //return the Model and View
+//		        return mav;
+//			
+			
+//	public String createNewUserMob(Model model,
+//			@ModelAttribute(value = "userMob") MobRegister user,
+//			BindingResult errors, HttpServletRequest request) {
+//		String PATTERN = "ddyyyyHHmmss";
+//		
+//
+//		SimpleDateFormat df = new SimpleDateFormat(PATTERN);
+//		String token = new Sha256Hash(user.getUsername()
+//				+ df.format(Calendar.getInstance().getTime())).toHex();
+//		user.setUsersalt(token);
+//
+//		user.getUserMetadata().setDateCreated(new Date());
+//		user.getUserMetadata().setSecChargeUser(user);
+//
+//		secchuserService.createNewUser(user);
+//		String body = "Hi " + user.getUsername() + ", \n";
+//		body += "Thanks for signing up! \n";
+//		body += "Please confirm your email address by <a href="
+//				+ getBaseURL(request) + "/register/email_confirmation/" + token
+//				+ ">clicking here.</a> \n";
+//		body += "Have fun! \n";
+//		secChargeMailingService.sendMail(user.getUserMetadata().getEmail(),
+//				"Your account is now registered", body);
+//		//return "redirect:/register/reg_conform";
+		//return "Registered Successfully";
+
+	}
+/*for mobile */
+	@RequestMapping(value = "/register/mob/usernameExists", method = RequestMethod.POST)
+	public @ResponseBody String checkIfUserNameExistsMob(Model model,
+			@RequestParam(value = "username") String username) {
+		SecChargeUser user = secchuserService.finduser(username);
+		if (user != null && username.equals(user.getUsername())) {
+
+			return "false";
+		}
+		return "true";
+	}
+
+
+
+}

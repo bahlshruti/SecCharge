@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvTimeListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test item"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <!--<item
+            android:id="@+id/nav_dash"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="DASHBOARD"/>-->
+
+        <item
+
+            android:id="@+id/nav_charge"
+            android:icon="@drawable/icon_charging_stations"
+            android:title="Charging Stations"/>
+
+        <item
+            android:id="@+id/nav_myAccount"
+            android:icon="@drawable/icon_my_account"
+            android:title="My Account" />
+
+        <item
+            android:id="@+id/nav_reserve"
+            android:icon="@drawable/icon_my_reservations"
+            android:title="My Reservations"/>
+
+        <item
+            android:id="@+id/nav_trip"
+            android:icon="@drawable/icon_trip_planner"
+            android:title="Trip Planner"/>
+
+        <item
+            android:id="@+id/nav_start_charging"
+            android:icon="@drawable/icon_start_charging"
+            android:title="Start Charging"/>
+
+        <item
+            android:id="@+id/nav_start_discharging"
+            android:icon="@drawable/icon_start_charging"
+            android:title="Discharge at Home"/>
+
+        <item
+            android:id="@+id/nav_meter_values"
+            android:icon="@drawable/icon_start_charging"
+            android:title="Charging Status"/>
+
+        <item
+            android:id="@+id/nav_peak_times"
+            android:icon="@drawable/icon_start_charging"
+            android:title="Peak Times"/>
+
+    </group>
+
+    <!--    <item android:title="Communicate">
+            <menu>
+                <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
+                    android:title="Share" />
+                <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
+                    android:title="Send" />
+            </menu>
+        </item>
+    -->
+
+</menu>

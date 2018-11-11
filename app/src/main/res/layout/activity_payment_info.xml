@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimaryT"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="com.aidor.secchargemobile.seccharge.PaymentInfoActivity">
+
+
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/white"/>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+           >
+            <LinearLayout
+
+                android:background="@color/colorPrimaryT"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:gravity="center">
+                 <TextView
+
+                     android:paddingTop="2dp"
+
+                      android:layout_gravity="center"
+                     android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Payment Information"
+                      android:textSize="25sp"
+                      android:textColor="@color/white"
+                      android:textStyle="bold"
+                       />
+                </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter New Credit Card "
+        android:layout_marginLeft="10sp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_marginTop="5sp"/>
+
+
+
+        <LinearLayout
+            android:padding="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cardholder Name "
+
+            android:textSize="20sp"
+             />
+
+        <EditText
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etFirstName"
+            android:layout_marginTop="5sp"
+            android:background="@drawable/edittext_myprofile"
+            android:hint="Enter Cardholder Name"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:textColor="#353434"
+            android:textColorHint="#f2f0f0" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Credit Card Number"
+                android:layout_marginTop="10sp"
+                android:textSize="20sp"
+                 />
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etCardNumber"
+                android:layout_marginTop="5sp"
+                android:background="@drawable/edittext_myprofile"
+                android:hint="Enter Card Number"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="#353434"
+                android:textColorHint="#f2f0f0"
+                android:maxLength="16"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="120"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_weight="40"
+                    android:padding="5dp"
+                    android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CVV "
+                android:layout_marginTop="10sp"
+                android:textSize="20sp"
+                 />
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/etSecurityCode"
+                android:background="@drawable/edittext_payment_page"
+                android:hint="Enter CVV"
+                android:layout_marginTop="5dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="#353434"
+                android:textColorHint="#f2f0f0"
+                android:maxLength="3"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_weight="40"
+                    android:padding="5dp"
+                    android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exp. Month "
+                android:layout_marginTop="10sp"
+                android:textSize="20sp"
+                 />
+            <Spinner
+                android:id="@+id/spinnerExpMonth"
+                android:layout_width="match_parent"
+                android:padding="5sp"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_payment_page"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/black" />
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_weight="40"
+                    android:padding="5dp"
+                    android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exp. Year "
+                android:layout_marginTop="10sp"
+                android:textSize="20sp"
+                 />
+            <Spinner
+                android:id="@+id/spinnerExpYear"
+                android:layout_width="match_parent"
+                android:padding="5sp"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_payment_page"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/black" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/green_button_selector"
+                    android:textColor="@drawable/greenbutton_text_selector"
+                    android:text = "Pay"
+                    android:id="@+id/btnPay"
+                    android:padding="10sp"
+
+                    android:onClick="payClicked"/>
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_button_selector"
+                    android:textColor="@drawable/whitebutton_text_selector"
+                    android:text = "Cancel"
+                    android:id="@+id/btnCancel"
+                    android:onClick="onCancelClicked"
+                    android:padding="10sp"
+                    android:layout_marginBottom="5dp"
+                     />
+
+
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        </LinearLayout>
+        </FrameLayout>
+
+
+
+</LinearLayout>

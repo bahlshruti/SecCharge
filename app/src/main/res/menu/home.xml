@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_view_as_list"
+        android:orderInCategory="100"
+        android:title="@string/action_view_as_list"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_filter_station"
+        android:orderInCategory="100"
+        android:title="@string/action_filter_station"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_satellite_map"
+        android:orderInCategory="100"
+        android:title="@string/action_satellite_map"
+        app:showAsAction="never" />
+
+    <!-- Added by Nikhil. Item for Driver Mode. -->
+    <item
+        android:id="@+id/driver_mode"
+        android:orderInCategory="100"
+        android:title="@string/driver_mode"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/voice_mode"
+        android:orderInCategory="100"
+        android:title="Voice Mode"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_log_out"
+        app:showAsAction="never" />
+</menu>

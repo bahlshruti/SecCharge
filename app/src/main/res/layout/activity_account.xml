@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#393939"
+    android:clipToPadding="false"
+    tools:context="com.aidor.secchargemobile.seccharge.AccountActivity"
+    >
+    <include layout="@layout/app_bar_normal" />
+
+    <Button
+        android:layout_marginTop="1sp"
+        android:layout_width="fill_parent"
+        android:layout_height="60sp"
+        android:text="My Profile"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:textColor="#4a5c6d"
+        android:paddingLeft="20sp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:onClick="onMyProfileSelected"
+        />
+    <Button
+        android:layout_marginTop="2dp"
+        android:onClick="onMyEvSelected"
+        android:layout_width="fill_parent"
+        android:layout_height="60sp"
+        android:text="My EV"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:textColor="#4a5c6d"
+        android:paddingLeft="20sp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+
+        />
+
+    <Button
+        android:layout_marginTop="2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="60sp"
+        android:text="Add Vehicle"
+        android:gravity="center_vertical"
+        android:onClick="onAddVehicleSelected"
+        android:background="#ffffff"
+        android:textColor="#4a5c6d"
+        android:paddingLeft="20sp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:layout_marginTop="2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="60sp"
+        android:text="State Of Charge"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:textColor="#4a5c6d"
+        android:paddingLeft="20sp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:onClick="onSocSelected"
+        />
+
+
+
+</LinearLayout>

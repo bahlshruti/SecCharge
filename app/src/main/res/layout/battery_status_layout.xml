@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reservation id"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tvReservationIdBattery"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Site id"
+        android:id="@+id/tvSiteIdBattery"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/tvReservationIdBattery"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:id="@+id/tvUsernameBattery"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/tvSiteIdBattery"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vechile"
+        android:id="@+id/tvVechileBattery"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/tvUsernameBattery"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SOC"
+        android:id="@+id/tvSOCBattery"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/tvVechileBattery"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4567"
+        android:id="@+id/batteryStatusReservationId"
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/tvReservationIdBattery"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="90dp"
+        android:layout_marginEnd="90dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="40"
+        android:id="@+id/batteryStatusSiteId"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/tvSiteIdBattery"
+        android:layout_alignLeft="@+id/batteryStatusReservationId"
+        android:layout_alignStart="@+id/batteryStatusReservationId" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JOHN"
+        android:id="@+id/batteryStatusUsername"
+        android:textSize="20dp"
+        android:layout_above="@+id/tvVechileBattery"
+        android:layout_alignLeft="@+id/batteryStatusSiteId"
+        android:layout_alignStart="@+id/batteryStatusSiteId" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visson"
+        android:id="@+id/batteryStatusVechile"
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/tvVechileBattery"
+        android:layout_alignLeft="@+id/batteryStatusUsername"
+        android:layout_alignStart="@+id/batteryStatusUsername" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        android:id="@+id/batteryStatusSoc"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/tvSOCBattery"
+        android:layout_alignLeft="@+id/batteryStatusVechile"
+        android:layout_alignStart="@+id/batteryStatusVechile" />
+
+
+</RelativeLayout>

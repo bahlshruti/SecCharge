@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="#e52b2b2b"
+    android:orientation="vertical">
+
+    <include layout = "@layout/app_bar_normal" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20sp">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+    <TextView
+
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Reservation id: "
+        android:id="@+id/tvreservationid"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4567"
+                android:textSize="20dp"
+                android:id="@+id/chargingStateReservationIdtv"
+                android:textColor="@color/white"
+                android:layout_marginLeft="30sp"
+                android:layout_centerHorizontal="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Site id: "
+            android:id="@+id/tvSiteid"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40"
+            android:textSize="20dp"
+            android:layout_marginLeft="30sp"
+            android:id="@+id/chargingStateSiteIdtv"
+            android:textColor="@color/white"
+            />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15sp">
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Username: "
+        android:id="@+id/tvUsername"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+      />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John"
+            android:id="@+id/chargingStateUsernametv"
+            android:textSize="20dp"
+            android:layout_marginLeft="30sp"
+            android:textColor="@color/white"
+            />
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15sp">
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Vehicle: "
+        android:id="@+id/tvVehicle"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+
+        />
+
+
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visson"
+        android:textSize="20dp"
+        android:id="@+id/chargingStateVechiletv"
+        android:layout_marginLeft="30sp"
+        android:textColor="@color/white"
+     />
+
+            </LinearLayout>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="START"
+        android:id="@+id/btnChargingStationStart"
+        android:background="@drawable/green_button_selector"
+        android:textColor="@drawable/greenbutton_text_selector"
+
+        android:alpha="0.85"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:id="@+id/btnChargingStationCancel"
+        android:background="@drawable/white_button_selector"
+        android:alpha="0.85"
+        android:textColor="@drawable/whitebutton_text_selector"
+  />
+
+    </LinearLayout>
+</LinearLayout>
+    </LinearLayout>

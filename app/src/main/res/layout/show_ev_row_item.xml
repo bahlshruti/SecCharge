@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="left"
+    android:orientation="horizontal"
+    android:padding="30dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:id="@+id/textVcarYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="left"
+        android:text="New Text"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_weight="0.2"/>
+
+    <TextView
+        android:id="@+id/textVcarMake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="left"
+        android:text="New Text"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_weight="1.3"/>
+
+    <TextView
+        android:id="@+id/textVcarModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:padding="10dp"
+        android:text="New Text"
+        android:gravity="left"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+    android:layout_weight="1"/>
+
+    <ImageView
+        android:id="@+id/imageViewEditVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:padding="10dp"
+        android:gravity="left"
+        android:src="@mipmap/ic_edit"
+        android:layout_weight="0.1"/>
+
+    <ImageView
+        android:id="@+id/imageViewDeleteVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:padding="10dp"
+        android:gravity="left"
+        android:src="@mipmap/ic_delete"
+        android:layout_weight="0.1"/>
+
+</LinearLayout>
