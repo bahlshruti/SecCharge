@@ -11,14 +11,24 @@ import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
+
 import com.aidor.projects.seccharge.R;
+import com.aidor.secchargemobile.Constants.Constant;
+import com.aidor.secchargemobile.Interface.ServiceCallbacks;
+import com.aidor.secchargemobile.api.VoiceApi;
+import com.aidor.secchargemobile.model.VoiceResponse;
+import com.aidor.secchargemobile.services.TTSService;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.aidor.secchargemobile.Constants.Constant;
-import com.aidor.secchargemobile.Interface.ServiceCallbacks;
-import com.aidor.secchargemobile.services.TTSService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
+import static com.aidor.secchargemobile.rest.VoiceRestClient.getClient;
 
 
 public class UserModeActivity extends AppCompatActivity implements ServiceCallbacks {
@@ -28,12 +38,14 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
     private static final String TAG = "UserCommand";
     private final int REQ_CODE_SPEECH_INPUT = 100;
     boolean flag = false;
-    String response = "yes";
     Intent speechIntent;
-    Intent intent;
+   // Intent intent;
 
     List<String> option_1 = Constant.option_1;
     List<String> option_5 = Constant.option_5;
+
+    VoiceApi apiService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +115,8 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
     /* Defined by ServiceCallbacks interface */
     @Override
     public void doNothing() {
-        finish();
+        //finish();
+        startActivity(getIntent());
     }
 
     private void promptSpeechInput() {
@@ -145,15 +158,32 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
                             "result: " + Result,
                             Toast.LENGTH_SHORT).show();
 
+                    apiService = getClient().create(VoiceApi.class);
+
                     if (option_1.contains(Result.get(0)))
                     {
-                        speechIntent.putExtra("final_content", "The car is accelerating");
-                        startService(speechIntent);
-                        Toast.makeText(UserModeActivity.this,
-                                "The car is accelerating",
-                                Toast.LENGTH_SHORT).show();
+                            Call<VoiceResponse> call = apiService.sendUserCommand("acceleration");
+                            call.enqueue(new Callback<VoiceResponse>() {
+                                @Override
+                                public void onResponse(Call<VoiceResponse> call, Response<VoiceResponse> response) {
+                                    if(response.isSuccessful()) {
+                                        String resp = response.body().getResponse();
+                                        speechIntent.putExtra( "final_content", resp );
+                                        startService( speechIntent );
+                                        Toast.makeText( UserModeActivity.this, resp,
+                                                Toast.LENGTH_SHORT ).show();
+                                    }
+                                }
 
-                    }
+                                @Override
+                                public void onFailure(Call call, Throwable t) {
+                                    Log.i( TAG, "onfailure: called" );
+
+                                    Log.i( TAG, "" + t );
+                                }
+                            });
+                        }
+
                     else if(option_5.contains(Result.get(0)))
                     {
                         finish();
@@ -163,8 +193,6 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
                         speechIntent.putExtra("content_to_speak", "please try again");
                         startService(speechIntent);
                     }
-
-
                 }
             }
         }

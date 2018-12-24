@@ -25,7 +25,7 @@
         android:layout_height="@android:dimen/notification_large_icon_height"
         android:fontFamily="serif-monospace"
         android:textStyle="bold"
-        android:text="1. Move Forward"
+        android:text="1. Forward"
         android:textAlignment="center"
         android:textSize="30sp" />
 

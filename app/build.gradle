@@ -53,5 +53,8 @@ dependencies {
     compile 'com.intuit.sdp:sdp-android:1.0.3'
     compile 'com.paypal.sdk:paypal-android-sdk:2.14.4'
 
+    //retrofit & OKHTTP
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+
 
 }
