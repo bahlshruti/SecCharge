@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="@android:dimen/notification_large_icon_width"
         android:fontFamily="monospace"
-        android:text="Auto Pilot"
+        android:text="Auto Steer"
         android:textAlignment="center"
         android:textColor="?attr/colorControlActivated"
         android:textColorLink="@color/colorPrimary"
@@ -36,6 +36,16 @@
         android:fontFamily="serif-monospace"
         android:textStyle="bold"
         android:text="2. Reverse"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="@android:dimen/notification_large_icon_height"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        android:text="3. Exit"
         android:textAlignment="center"
         android:textSize="30sp" />
 
