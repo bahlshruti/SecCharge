@@ -14,10 +14,23 @@ import android.widget.Toast;
 
 import com.aidor.projects.seccharge.R;
 import com.aidor.secchargemobile.Interface.ServiceCallbacks;
+import com.aidor.secchargemobile.api.VoiceApi;
+import com.aidor.secchargemobile.model.VoiceResponse;
 import com.aidor.secchargemobile.services.TTSService;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.aidor.secchargemobile.Constants.Constant.negativeArray;
+import static com.aidor.secchargemobile.Constants.Constant.option_1;
+import static com.aidor.secchargemobile.Constants.Constant.option_2;
+import static com.aidor.secchargemobile.Constants.Constant.option_3;
+import static com.aidor.secchargemobile.Constants.Constant.positiveArray;
+import static com.aidor.secchargemobile.rest.VoiceRestClient.getClient;
 
 public class AutoSteeringActivity extends AppCompatActivity implements ServiceCallbacks {
 
@@ -28,7 +41,9 @@ public class AutoSteeringActivity extends AppCompatActivity implements ServiceCa
     boolean flag = false;
     String response = "yes";
     Intent speechIntent;
-    Intent intent;
+    Intent finalIntent;
+
+    VoiceApi apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +56,7 @@ public class AutoSteeringActivity extends AppCompatActivity implements ServiceCa
         Log.i(TAG, "onStart");
         super.onStart();
         speechIntent = new Intent(AutoSteeringActivity.this, TTSService.class);
+        finalIntent = new Intent(AutoSteeringActivity.this, TTSService.class);
         speechIntent.putExtra("content_to_speak", "welcome to Auto Pilot Commands section! Which command you want to run? " +
                 " 1 for Forward 2 for Reverse 3 for Exit");
         //speechIntent.putExtra("options", " 1 for Forward 2 for Reverse 3 for Exit");
@@ -103,6 +119,8 @@ public class AutoSteeringActivity extends AppCompatActivity implements ServiceCa
     @Override
     public void doNothing() {
 
+        speechIntent.putExtra("content_to_speak", "Do you wish to continue?");
+        startService(speechIntent);
     }
 
     private void promptSpeechInput() {
@@ -143,17 +161,65 @@ public class AutoSteeringActivity extends AppCompatActivity implements ServiceCa
                     Toast.makeText(AutoSteeringActivity.this,
                             "result: " + Result,
                             Toast.LENGTH_SHORT).show();
-                    finish();
+
+                    apiService = getClient().create(VoiceApi.class);
+
+                    if (option_1.contains(Result.get(0)))
+                    {
+                        Call<VoiceResponse> call = apiService.sendAutoSteeringCommand("forward");
+                        process(call);
+                    }
+
+                    else if(option_2.contains(Result.get(0)))
+                    {
+                        Call<VoiceResponse> call = apiService.sendAutoSteeringCommand("reverse");
+                        process(call);
+
+                    }
+                    else if(option_3.contains(Result.get(0)))
+                    {
+                        Log.i( TAG, "exiting" );
+                        finish();
+                    }
+                    else if(positiveArray.contains(Result.get(0)))
+                    {
+                        speechIntent.putExtra("content_to_speak", "Which command you want to run? " +
+                                " 1 for Forward 2 for Reverse 3 for Exit");
+                        startService(speechIntent);
+                    }
+                    else if (negativeArray.contains(Result.get(0)))
+                    {
+                        finish();
+                    }
+                    else
+                    {
+                        speechIntent.putExtra("content_to_speak", "please try again");
+                        startService(speechIntent);
+                    }
                 }
             }
         }
     }
 
-    public void confirmation(ArrayList<String> Result) {
-        flag = true;
-        Log.i(TAG, "Result: " + Result);
-        speechIntent.putExtra("content_to_speak", "did you say" + Result);
-        startService(speechIntent);
+    public void process(Call<VoiceResponse> call)
+    {
+        call.enqueue(new Callback<VoiceResponse>() {
+            @Override
+            public void onResponse(Call<VoiceResponse> call, Response<VoiceResponse> response) {
+                if(response.isSuccessful()) {
+                    String resp = response.body().getResponse();
+                    finalIntent.putExtra( "final_content", resp );
+                    startService( finalIntent );
+                    Toast.makeText( AutoSteeringActivity.this, resp,
+                            Toast.LENGTH_SHORT ).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                Log.i( TAG, "" + t );
+            }
+        });
 
     }
 

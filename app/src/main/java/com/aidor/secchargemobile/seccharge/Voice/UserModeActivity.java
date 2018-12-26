@@ -26,8 +26,12 @@ import java.util.Locale;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
+import static com.aidor.secchargemobile.Constants.Constant.negativeArray;
+import static com.aidor.secchargemobile.Constants.Constant.option_2;
+import static com.aidor.secchargemobile.Constants.Constant.option_3;
+import static com.aidor.secchargemobile.Constants.Constant.option_4;
+import static com.aidor.secchargemobile.Constants.Constant.positiveArray;
 import static com.aidor.secchargemobile.rest.VoiceRestClient.getClient;
 
 
@@ -39,6 +43,7 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
     private final int REQ_CODE_SPEECH_INPUT = 100;
     boolean flag = false;
     Intent speechIntent;
+    Intent finalIntent;
    // Intent intent;
 
     List<String> option_1 = Constant.option_1;
@@ -58,6 +63,7 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
         Log.i(TAG, "onStart");
         super.onStart();
         speechIntent = new Intent(UserModeActivity.this, TTSService.class);
+        finalIntent = new Intent(UserModeActivity.this, TTSService.class);
         speechIntent.putExtra("content_to_speak", "welcome to User Commands section! Which command you want to run?" +
                 "one for Acceleration   2 for Left   3 for Right  4 for Reverse 5 for Exit");
 
@@ -115,8 +121,10 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
     /* Defined by ServiceCallbacks interface */
     @Override
     public void doNothing() {
-        //finish();
-        startActivity(getIntent());
+
+        speechIntent.putExtra("content_to_speak", "Do you wish to continue?");
+        startService(speechIntent);
+
     }
 
     private void promptSpeechInput() {
@@ -163,28 +171,38 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
                     if (option_1.contains(Result.get(0)))
                     {
                             Call<VoiceResponse> call = apiService.sendUserCommand("acceleration");
-                            call.enqueue(new Callback<VoiceResponse>() {
-                                @Override
-                                public void onResponse(Call<VoiceResponse> call, Response<VoiceResponse> response) {
-                                    if(response.isSuccessful()) {
-                                        String resp = response.body().getResponse();
-                                        speechIntent.putExtra( "final_content", resp );
-                                        startService( speechIntent );
-                                        Toast.makeText( UserModeActivity.this, resp,
-                                                Toast.LENGTH_SHORT ).show();
-                                    }
-                                }
+                            process(call);
+                    }
 
-                                @Override
-                                public void onFailure(Call call, Throwable t) {
-                                    Log.i( TAG, "onfailure: called" );
+                    else if(option_2.contains(Result.get(0)))
+                    {
+                        Call<VoiceResponse> call = apiService.sendUserCommand("left");
+                        process(call);
 
-                                    Log.i( TAG, "" + t );
-                                }
-                            });
-                        }
-
+                    }
+                    else if(option_3.contains(Result.get(0)))
+                    {
+                        Call<VoiceResponse> call = apiService.sendUserCommand("right");
+                        process(call);
+                    }
+                    else if(option_4.contains(Result.get(0)))
+                    {
+                        Call<VoiceResponse> call = apiService.sendUserCommand("reverse");
+                        process(call);
+                    }
                     else if(option_5.contains(Result.get(0)))
+                    {
+                        Log.i( TAG, "exiting" );
+                        finish();
+
+                    }
+                    else if(positiveArray.contains(Result.get(0)))
+                    {
+                        speechIntent.putExtra("content_to_speak", "Which command you want to run?" +
+                                "one for Acceleration   2 for Left   3 for Right  4 for Reverse 5 for Exit");
+                        startService(speechIntent);
+                    }
+                    else if (negativeArray.contains(Result.get(0)))
                     {
                         finish();
                     }
@@ -198,6 +216,27 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
         }
     }
 
+    public void process(Call<VoiceResponse> call)
+    {
+        call.enqueue(new Callback<VoiceResponse>() {
+            @Override
+            public void onResponse(Call<VoiceResponse> call, Response<VoiceResponse> response) {
+                if(response.isSuccessful()) {
+                    String resp = response.body().getResponse();
+                    finalIntent.putExtra( "final_content", resp );
+                    startService( finalIntent );
+                    Toast.makeText( UserModeActivity.this, resp,
+                            Toast.LENGTH_SHORT ).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                Log.i( TAG, "" + t );
+            }
+        });
+
+    }
     public void confirmation(ArrayList<String> Result) {
         flag = true;
         Log.i(TAG, "Result: " + Result);

@@ -7,10 +7,29 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="09e5a28d-11ad-4c72-86b7-e401658159a1" name="Default" comment="" />
+=======
+    <list default="true" id="09e5a28d-11ad-4c72-86b7-e401658159a1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/AutoSteeringActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/AutoSteeringActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/UserModeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/UserModeActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_pilot.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_pilot.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_steering.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_steering.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_modes.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_modes.xml" />
+    </list>
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +59,20 @@
       <file leaf-file-name="UserModeActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/UserModeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="154">
               <caret line="188" column="25" lean-forward="false" selection-start-line="188" selection-start-column="25" selection-end-line="188" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1545865902604" expanded="true" signature="6729:6910" ph="{...}" />
+=======
+            <state relative-caret-position="199">
+              <caret line="195" column="25" lean-forward="false" selection-start-line="192" selection-start-column="20" selection-end-line="197" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#8068#8069#0" expanded="true" />
+                <element signature="e#8120#8121#0" expanded="true" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
               </folding>
             </state>
           </provider>
@@ -65,10 +93,18 @@
       <file leaf-file-name="AutoSteeringActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/AutoSteeringActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="242">
               <caret line="146" column="17" lean-forward="false" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
               <folding>
                 <marker date="1545865902603" expanded="true" signature="4923:4932" ph="{...}" />
+=======
+            <state relative-caret-position="375">
+              <caret line="193" column="24" lean-forward="false" selection-start-line="193" selection-start-column="24" selection-end-line="193" selection-end-column="24" />
+              <folding>
+                <element signature="e#7631#7632#0" expanded="true" />
+                <element signature="e#7683#7684#0" expanded="true" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
               </folding>
             </state>
           </provider>
@@ -80,8 +116,13 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="150">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+=======
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
               <folding />
             </state>
           </provider>
@@ -94,10 +135,15 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="179">
+<<<<<<< HEAD
               <caret line="13" column="42" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="15" selection-end-column="27" />
               <folding>
                 <marker date="1545865902608" expanded="true" signature="1526:1600" ph="..." />
               </folding>
+=======
+              <caret line="13" column="42" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="19" selection-end-column="34" />
+              <folding />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
             </state>
           </provider>
         </entry>
@@ -1893,26 +1939,27 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/MyURL.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/home.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/Interface/ServiceCallbacks.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/services/TTSService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/Constants/Constant.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/VoiceActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/VoiceActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_modes.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/UserActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_user.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_pilot.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_mode.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/ModesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/AutoPilotActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_steering.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/model/VoiceResponse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/rest/VoiceRestClient.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/api/VoiceApi.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/services/TTSService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_modes.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/UserModeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_steering.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_auto_pilot.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/AutoSteeringActivity.java" />
       </list>
     </option>
   </component>
@@ -2084,46 +2131,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -2141,6 +2148,24 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecCharge_Android_Client-profile2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+=======
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
       <pane id="Scratches" />
     </panes>
   </component>
@@ -2152,6 +2177,7 @@
     <property name="SearchEverywhereHistoryKey" value="drawer_layout&#9;PSI&#9;JAVA://com.aidor.projects.seccharge.R.id#drawer_layout" />
     <property name="android.project.structure.last.selected" value="Project" />
     <property name="android.project.structure.proportion" value="0.15" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2254,7 +2280,11 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
+<<<<<<< HEAD
         <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1545865917367" />
+=======
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1545864995965" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2301,7 +2331,11 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
+<<<<<<< HEAD
         <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1545865917367" />
+=======
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1545864995965" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2462,7 +2496,11 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
+<<<<<<< HEAD
         <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1545865917368" />
+=======
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1545864995969" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
       </method>
     </configuration>
     <list size="1">
@@ -2562,6 +2600,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16264522" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09418283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -2573,6 +2612,8 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2486631" sideWeight="0.16435644" order="6" side_tool="true" content_ui="tabs" />
+=======
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2786,6 +2827,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/AutoPilotActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -2804,6 +2846,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/MyURL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -2811,6 +2855,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_modes.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -2821,6 +2866,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2831,6 +2878,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auto_pilot.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2855,6 +2903,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/api/RestApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -2908,33 +2958,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/api/VoiceApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+<<<<<<< HEAD
+=======
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/Constants/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
         </state>
       </provider>
     </entry>
@@ -2942,12 +2971,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-575">
           <caret line="83" column="13" lean-forward="false" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2524">
+        <state relative-caret-position="780">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
@@ -2956,46 +2986,177 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/services/TTSService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="214" column="13" lean-forward="false" selection-start-line="214" selection-start-column="13" selection-end-line="214" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/VoiceActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="315">
+          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+=======
         <state relative-caret-position="-2491">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/ModesActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1617">
+<<<<<<< HEAD
+        <state relative-caret-position="135">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+=======
+        <state relative-caret-position="15">
           <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-575">
+          <caret line="83" column="13" lean-forward="false" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+=======
         <state relative-caret-position="326">
           <caret line="145" column="26" lean-forward="false" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/UserModeActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/services/TTSService.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="136" column="48" lean-forward="false" selection-start-line="136" selection-start-column="48" selection-end-line="136" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/Constants/Constant.java">
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/api/VoiceApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="456">
+          <caret line="214" column="13" lean-forward="false" selection-start-line="214" selection-start-column="13" selection-end-line="214" selection-end-column="13" />
+=======
+        <state relative-caret-position="315">
+          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/AutoPilotActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_modes.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auto_steering.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="326">
+          <caret line="145" column="26" lean-forward="false" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="26" />
+=======
+        <state relative-caret-position="179">
+          <caret line="13" column="42" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="19" selection-end-column="34" />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auto_pilot.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="154">
           <caret line="188" column="25" lean-forward="false" selection-start-line="188" selection-start-column="25" selection-end-line="188" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1545865902604" expanded="true" signature="6729:6910" ph="{...}" />
+          </folding>
+=======
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+>>>>>>> 209474af886448729aa46d889787aa317e6d55c8
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/UserModeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="195" column="25" lean-forward="false" selection-start-line="192" selection-start-column="20" selection-end-line="197" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8068#8069#0" expanded="true" />
+            <element signature="e#8120#8121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aidor/secchargemobile/seccharge/Voice/AutoSteeringActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="193" column="24" lean-forward="false" selection-start-line="193" selection-start-column="24" selection-end-line="193" selection-end-column="24" />
+          <folding>
+            <element signature="e#7631#7632#0" expanded="true" />
+            <element signature="e#7683#7684#0" expanded="true" />
           </folding>
         </state>
       </provider>

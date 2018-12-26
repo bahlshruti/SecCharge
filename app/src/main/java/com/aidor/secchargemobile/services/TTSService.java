@@ -19,6 +19,7 @@ import java.util.Locale;
 public class TTSService extends TextToSpeechService implements TextToSpeech.OnInitListener {
     private String content = null;
     private String final_content = null;
+    private String continue_content = null;
 
     private TextToSpeech tts;
     private static final String TAG="TTSService";
@@ -134,6 +135,7 @@ public class TTSService extends TextToSpeechService implements TextToSpeech.OnIn
             Log.i(TAG, "str = "+content);
             final_content = intent.getExtras().getString("final_content");
             Log.i(TAG, "str1 = "+final_content);
+
         }
         tts = new TextToSpeech(this,this);  // OnInitListener
 
