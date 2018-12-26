@@ -121,8 +121,6 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
     /* Defined by ServiceCallbacks interface */
     @Override
     public void doNothing() {
-        //finish();
-        //startActivity(getIntent());
 
         speechIntent.putExtra("content_to_speak", "Do you wish to continue?");
         startService(speechIntent);

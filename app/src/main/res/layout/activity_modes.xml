@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="@android:dimen/notification_large_icon_width"
         android:fontFamily="serif-monospace"
-        android:text="2. Auto Mode"
+        android:text="2. Auto Pilot Mode"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="30sp" />
@@ -44,9 +44,9 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="@android:dimen/notification_large_icon_height"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="serif-monospsace"
         android:textStyle="bold"
-        android:text="3.Auto Pilot"
+        android:text="3.Auto Steering Mode"
         android:textAlignment="center"
         android:textSize="30sp" />
 
