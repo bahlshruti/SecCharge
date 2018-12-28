@@ -57,7 +57,7 @@ public class AutoSteeringActivity extends AppCompatActivity implements ServiceCa
         super.onStart();
         speechIntent = new Intent(AutoSteeringActivity.this, TTSService.class);
         finalIntent = new Intent(AutoSteeringActivity.this, TTSService.class);
-        speechIntent.putExtra("content_to_speak", "welcome to Auto Pilot Commands section! Which command you want to run? " +
+        speechIntent.putExtra("content_to_speak", "welcome to Auto Steering Commands section! Which command you want to run? " +
                 " 1 for Forward 2 for Reverse 3 for Exit");
         //speechIntent.putExtra("options", " 1 for Forward 2 for Reverse 3 for Exit");
         bindService(speechIntent, serviceConnection, Context.BIND_AUTO_CREATE);
@@ -176,7 +176,7 @@ public class AutoSteeringActivity extends AppCompatActivity implements ServiceCa
                         process(call);
 
                     }
-                    else if(option_3.contains(Result.get(0)))
+                    else if(option_3.contains(Result.get(0))||negativeArray.contains(Result.get(0)))
                     {
                         Log.i( TAG, "exiting" );
                         finish();
@@ -186,10 +186,6 @@ public class AutoSteeringActivity extends AppCompatActivity implements ServiceCa
                         speechIntent.putExtra("content_to_speak", "Which command you want to run? " +
                                 " 1 for Forward 2 for Reverse 3 for Exit");
                         startService(speechIntent);
-                    }
-                    else if (negativeArray.contains(Result.get(0)))
-                    {
-                        finish();
                     }
                     else
                     {

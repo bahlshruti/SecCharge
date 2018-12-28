@@ -51,7 +51,7 @@ public class ModesActivity extends AppCompatActivity implements ServiceCallbacks
         super.onStart();
         speechIntent = new Intent(ModesActivity.this, TTSService.class);
         speechIntent.putExtra("content_to_speak", "welcome to Mode section ! Which mode you would prefer." +
-                "  one for user mode.   2 for Auto mode.   3 for Auto Pilot.  or 4 for Exit");
+                "  one for user mode.   2 for Auto Pilot   3 for Auto Steering  or 4 for Exit");
         //speechIntent.putExtra("options", " one for user mode.   2 for Auto mode.   3 for Auto Pilot.  or Exit");
         bindService(speechIntent, serviceConnection, Context.BIND_AUTO_CREATE);
         startService(speechIntent);
@@ -160,29 +160,30 @@ public class ModesActivity extends AppCompatActivity implements ServiceCallbacks
                     } else if (positive.contains( Result.get(0) ) && option_1.contains( response )){
                         intent = new Intent(ModesActivity.this, UserModeActivity.class);
                         startActivity(intent);
-                        finish();
+                        //finish();
 
                     } else if (positive.contains( Result.get(0) ) && option_2.contains( response )) {
                         intent = new Intent(ModesActivity.this,AutoPilotActivity.class);
                         startActivity(intent);
-                        finish();
+                        //finish();
 
                     } else if (positive.contains( Result.get(0) ) && option_3.contains( response )) {
                         intent = new Intent(ModesActivity.this, AutoSteeringActivity.class);
                         startActivity(intent);
-                        finish();
+                        //finish();
                     }
-                    else if(positive.contains(Result.get(0) ) && option_4.contains( response ))
+                    else if(positive.contains(Result.get(0)) && option_4.contains(response))
                     {
                         // to exit from application
-                        flag=false;
+
                         finish();
                     }
                     else {
-                        flag = false;
+
                         speechIntent.putExtra("content_to_speak", " please try again?");
                         startService(speechIntent);
                     }
+                    flag = false;
                 }
             }
         }

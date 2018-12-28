@@ -236,7 +236,7 @@ public class VoiceActivity extends Activity implements ServiceCallbacks{
                             startService(speechIntent);
 
                         } else {
-                            //result='yes' and response ='no'
+
                             // exit the application...
                             finish();
                         }
@@ -246,8 +246,6 @@ public class VoiceActivity extends Activity implements ServiceCallbacks{
                         speechIntent.putExtra("content_to_speak", "sorry please try again");
                         startService(speechIntent);
                     }
-                    //Result.clear();
-                    break;
                 }
             }
         }

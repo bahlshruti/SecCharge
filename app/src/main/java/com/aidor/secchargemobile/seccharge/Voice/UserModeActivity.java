@@ -190,7 +190,7 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
                         Call<VoiceResponse> call = apiService.sendUserCommand("reverse");
                         process(call);
                     }
-                    else if(option_5.contains(Result.get(0)))
+                    else if(option_5.contains(Result.get(0))||negativeArray.contains(Result.get(0)))
                     {
                         Log.i( TAG, "exiting" );
                         finish();
@@ -201,10 +201,6 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
                         speechIntent.putExtra("content_to_speak", "Which command you want to run?" +
                                 "one for Acceleration   2 for Left   3 for Right  4 for Reverse 5 for Exit");
                         startService(speechIntent);
-                    }
-                    else if (negativeArray.contains(Result.get(0)))
-                    {
-                        finish();
                     }
                     else
                     {

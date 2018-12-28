@@ -19,6 +19,6 @@ public interface VoiceApi {
     @GET("test/voice/auto_steer/{command}")
     Call<VoiceResponse> sendAutoSteeringCommand(@Path("command") String command);
 
-    @GET("test/voice/auto/{command}")
-    Call<VoiceResponse> sendAutoCommand(@Path("command") String command);
+    @GET("test/voice/auto")
+    Call<VoiceResponse> sendAutoCommand();
 }
