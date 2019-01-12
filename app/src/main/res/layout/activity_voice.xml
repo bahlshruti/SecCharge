@@ -5,8 +5,8 @@
     android:id="@+id/activity_voice"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.aidor.secchargemobile.seccharge.Voice.VoiceActivity"
-    android:background="@color/white">
+    android:background="@color/md_steel_grey"
+    tools:context="com.aidor.secchargemobile.seccharge.Voice.VoiceActivity">
 
     <ImageView
 
@@ -17,7 +17,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_104sdp"
         android:adjustViewBounds="true"
+
         android:scaleType="fitXY"
         android:src="@drawable/autonomous_vehicles_self_driving_cars" />
 

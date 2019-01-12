@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.speech.RecognizerIntent;
@@ -31,6 +32,7 @@ import static com.aidor.secchargemobile.Constants.Constant.option_2;
 import static com.aidor.secchargemobile.Constants.Constant.option_3;
 import static com.aidor.secchargemobile.Constants.Constant.positiveArray;
 import static com.aidor.secchargemobile.rest.VoiceRestClient.getClient;
+import android.widget.TextView;
 
 public class AutoSteeringActivity extends AppCompatActivity implements ServiceCallbacks {
 

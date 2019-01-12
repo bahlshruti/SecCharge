@@ -7,7 +7,7 @@
     <color name="pressed_color">#aee1f7</color>
     <color name="default_color">#66cea7</color>
 
-        <color name="alertDialog_Progress_Color">#ff4c72dc</color>
+        <color name="alertDialog_Progress_Color">#4c72dc</color>
         <color name="alertDialog_Progress_hintColor">#40dcd8d5</color>
         <color name="float_transparent">#00000000</color>
         <color name="sweet_dialog_bg_color">#FFFFFF</color>
@@ -113,7 +113,7 @@
         <color name="md_indigo_A700">#304FFE</color>
 
         <!--blue-->
-        <color name="md_blue_50">#E3F2FD</color>
+        <color name="md_blue_50">#e3f2fd</color>
         <color name="md_blue_100">#BBDEFB</color>
         <color name="md_blue_200">#90CAF9</color>
         <color name="md_blue_300">#64B5F6</color>
@@ -175,6 +175,7 @@
         <color name="md_teal_A200">#64FFDA</color>
         <color name="md_teal_A400">#1DE9B6</color>
         <color name="md_teal_A700">#00BFA5</color>
+        <color name="md_teal_A800">#AFEEEE</color>
 
         <!-- green -->
         <color name="md_green_50">#E8F5E9</color>
@@ -241,8 +242,8 @@
         <color name="md_yellow_A700">#FFD600</color>
 
         <!--amber-->
-        <color name="md_amber_50">#FFF8E1</color>
-        <color name="md_amber_100">#FFECB3</color>
+        <color name="md_amber_50">#fff8e1</color>
+        <color name="md_amber_100">#ffecb3</color>
         <color name="md_amber_200">#FFE082</color>
         <color name="md_amber_300">#FFD54F</color>
         <color name="md_amber_400">#FFCA28</color>
@@ -313,6 +314,7 @@
         <color name="md_grey_900">#212121</color>
         <color name="md_black_1000">#000000</color>
         <color name="md_white_1000">#ffffff</color>
+        <color name="md_steel_grey">#505050</color>>
 
         <!--blue grey-->
         <color name="md_blue_grey_50">#ECEFF1</color>

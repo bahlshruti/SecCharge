@@ -1,52 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
+    android:background="@color/md_steel_grey"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.aidor.secchargemobile.seccharge.Voice.AutoSteeringActivity">
 
-    <TextView
-        android:id="@+id/textView1"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="@android:dimen/notification_large_icon_width"
-        android:fontFamily="monospace"
-        android:text="Auto Steer"
-        android:textAlignment="center"
-        android:textColor="?attr/colorControlActivated"
-        android:textColorLink="@color/colorPrimary"
-        android:textSize="36sp" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="@android:dimen/notification_large_icon_height"
-        android:fontFamily="serif-monospace"
-        android:textStyle="bold"
-        android:text="1. Forward"
-        android:textAlignment="center"
-        android:textSize="30sp" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/place_autocomplete_powered_by_google_height"
+                android:background="#7AF5F5"
+                android:fontFamily="serif"
+                android:text="Auto Steering Commands Section"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="@android:dimen/notification_large_icon_height"
-        android:fontFamily="serif-monospace"
-        android:textStyle="bold"
-        android:text="2. Reverse"
-        android:textAlignment="center"
-        android:textSize="30sp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="@android:dimen/notification_large_icon_height"
-        android:fontFamily="serif-monospace"
-        android:textStyle="bold"
-        android:text="3. Exit"
-        android:textAlignment="center"
-        android:textSize="30sp" />
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="@dimen/_153sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="serif"
+                android:text="1. Forward"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:textAllCaps="false"/>
 
-</LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="@dimen/_153sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="sans-serif"
+                android:text="2. Reverse"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:textAllCaps="false"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="@dimen/_153sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="sans-serif"
+                android:text="3. Exit"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:textAllCaps="false"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
+</RelativeLayout>

@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:background="@color/md_steel_grey"
+
     tools:context="com.aidor.secchargemobile.seccharge.Voice.AutoPilotActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="@android:dimen/notification_large_icon_width"
-        android:fontFamily="monospace"
-        android:text="Wecome to Auto Pilot Mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/place_autocomplete_powered_by_google_height"
+        android:background="#7AF5F5"
+        android:fontFamily="serif"
+        android:text="Auto Pilot Commands Section"
         android:textAlignment="center"
-        android:textColor="?attr/colorControlActivated"
-        android:textColorLink="@color/colorPrimary"
-        android:textSize="29sp" />
-</LinearLayout>
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    </TableLayout>
+</RelativeLayout>
