@@ -147,11 +147,8 @@ public class ModesActivity extends AppCompatActivity implements ServiceCallbacks
                     ArrayList<String> Result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
-                    Toast.makeText(ModesActivity.this,
-                            "result: " + Result,
-                            Toast.LENGTH_SHORT).show();
-
-                    if (option_1.contains(Result.get(0)) || option_2.contains(Result.get(0)) || option_3.contains(Result.get(0)) || option_4.contains(Result.get(0))) {
+                    if (option_1.contains(Result.get(0)) || option_2.contains(Result.get(0)) ||
+                            option_3.contains(Result.get(0)) || option_4.contains(Result.get(0))) {
 
                         if (!flag) {
                             response = Result.get(0);

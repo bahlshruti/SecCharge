@@ -160,10 +160,6 @@ public class AutoSteeringActivity extends AppCompatActivity implements ServiceCa
                     ArrayList<String> Result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
-                    Toast.makeText(AutoSteeringActivity.this,
-                            "result: " + Result,
-                            Toast.LENGTH_SHORT).show();
-
                     apiService = getClient().create(VoiceApi.class);
 
                     if (option_1.contains(Result.get(0)))

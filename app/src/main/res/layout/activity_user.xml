@@ -16,7 +16,7 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_46sdp"
+            android:layout_height="@dimen/_70sdp"
             android:layout_marginTop="40dp"
             android:background="#7AF5F5"
             android:fontFamily="serif"
@@ -38,7 +38,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/rounded_button"
                 android:fontFamily="serif"
-                android:text="1. Acceleration"
+                android:text="1. Forward"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="italic"

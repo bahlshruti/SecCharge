@@ -65,7 +65,7 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
         speechIntent = new Intent(UserModeActivity.this, TTSService.class);
         finalIntent = new Intent(UserModeActivity.this, TTSService.class);
         speechIntent.putExtra("content_to_speak", "welcome to User Commands section! Which command you want to run?" +
-                "one for Acceleration   2 for Left   3 for Right  4 for Reverse 5 for Exit");
+                "one for Forward   2 for Left   3 for Right  4 for Reverse 5 for Exit");
 
         bindService(speechIntent, serviceConnection, Context.BIND_AUTO_CREATE);
         startService(speechIntent);
@@ -162,15 +162,11 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
                     ArrayList<String> Result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
-                    Toast.makeText(UserModeActivity.this,
-                            "result: " + Result,
-                            Toast.LENGTH_SHORT).show();
-
                     apiService = getClient().create(VoiceApi.class);
 
                     if (option_1.contains(Result.get(0)))
                     {
-                            Call<VoiceResponse> call = apiService.sendUserCommand("acceleration");
+                            Call<VoiceResponse> call = apiService.sendUserCommand("forward");
                             process(call);
                     }
 
@@ -199,7 +195,7 @@ public class UserModeActivity extends AppCompatActivity implements ServiceCallba
                     else if(positiveArray.contains(Result.get(0)))
                     {
                         speechIntent.putExtra("content_to_speak", "Which command you want to run?" +
-                                "one for Acceleration   2 for Left   3 for Right  4 for Reverse 5 for Exit");
+                                "one for forward   2 for Left   3 for Right  4 for Reverse 5 for Exit");
                         startService(speechIntent);
                     }
                     else

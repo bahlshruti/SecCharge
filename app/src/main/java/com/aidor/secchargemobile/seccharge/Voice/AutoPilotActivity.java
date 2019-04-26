@@ -154,10 +154,6 @@ public class AutoPilotActivity extends Activity implements ServiceCallbacks {
                     ArrayList<String> Result = data
                             .getStringArrayListExtra( RecognizerIntent.EXTRA_RESULTS );
 
-                    Toast.makeText( AutoPilotActivity.this,
-                            "result: " + Result,
-                            Toast.LENGTH_SHORT ).show();
-
                     apiService = getClient().create(VoiceApi.class);
 
                     if(positiveArray.contains(Result.get(0)))

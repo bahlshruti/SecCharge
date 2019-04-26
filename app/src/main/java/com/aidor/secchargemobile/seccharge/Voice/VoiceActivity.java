@@ -214,9 +214,6 @@ public class VoiceActivity extends Activity implements ServiceCallbacks{
 
                     ArrayList<String> Result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    Toast.makeText(VoiceActivity.this,
-                            "result: " + Result,
-                            Toast.LENGTH_SHORT).show();
 
                     if (positiveArray.contains( Result.get(0)) || negativeArray.contains(Result.get(0))) {
 
